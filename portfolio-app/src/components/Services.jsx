@@ -64,20 +64,23 @@ const Services = () => {
 
       {/* Service Cards */}
       <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6 py-10 px-10 font-custom">
-        {services.map((service, index) => (
-          <div key={index} className="bg-[#1b1b1b] text-white p-6 rounded-xl shadow-md">
-            <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
-            <p className="text-gray-400 mb-4">{service.description}</p>
-            <a href={service.link} target="_blank" rel="noopener noreferrer" className="w-full block">
-              <button className="flex items-center justify-between w-full pl-4 pr-2 py-1 border-2 border-white rounded-full hover:bg-white hover:text-black group">
-                <span className="text-sm font-bold">READ MORE</span>
-                <div className="flex items-center justify-center w-8 h-8 ml-2 bg-white rounded-full group-hover:bg-orange-500">
-                  <FontAwesomeIcon icon={faArrowRight} className="text-black" />
-                </div>
-              </button>
-            </a>
-          </div>
-        ))}
+       {services.map((service, index) => (
+  <div key={index} className="bg-[#1b1b1b] text-white p-6 rounded-xl shadow-md flex flex-col justify-between">
+    <div>
+      <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
+      <p className="text-gray-400 mb-6">{service.description}</p>
+    </div>
+    <a href={service.link} target="_blank" rel="noopener noreferrer" className="mt-auto block">
+      <button className="flex items-center justify-between w-full pl-4 pr-2 py-1 border-2 border-white rounded-full hover:bg-white hover:text-black group transition-all duration-300">
+        <span className="text-sm font-bold">READ MORE</span>
+        <div className="flex items-center justify-center w-8 h-8 ml-2 bg-white rounded-full group-hover:bg-orange-500 transition-all duration-300">
+          <FontAwesomeIcon icon={faArrowRight} className="text-black" />
+        </div>
+      </button>
+    </a>
+  </div>
+))}
+
       </div>
     </motion.div>
   );
