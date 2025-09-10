@@ -61,8 +61,7 @@ const vari = {
             Full Stack Web Developer.
           </motion.h1>
        <motion.p variants={vari} initial="initial" animate="anima" className='lg:text-gray-500 ...'>
-  A passionate Full Stack Developer skilled in building fast, scalable, and secure web applications. Experienced with the MERN stack, Next.js, GraphQL, and real-time technologies, I create responsive, user-focused solutions. Recently, I’ve also integrated AI models and modern DevOps practices to deliver powerful, production-ready digital products.
-</motion.p>
+A passionate Full Stack Developer with expertise in MERN, Next.js, and GraphQL. I build fast, scalable, and secure applications with clean UI and real-time features using WebSockets and WebRTC. Recently, I’ve expanded my skills into AI integrations with Hugging Face and adopted DevOps practices to deliver reliable, production-ready digital products.</motion.p>
 
 <motion.div variants={vari} initial="initial" animate="anima" className="btns lg:space-x-4 ...">
   <a href={cv} download="Muhammad_Asim_CV.pdf">
