@@ -121,6 +121,29 @@ const Contact = () => {
                         <FontAwesomeIcon icon={faPhone} className='mr-3' /> 
                         Tel: +92 331 3399915
                     </p>
+                    {/* Hire Me Section */}
+<div className="pt-6 w-full">
+  <h2 className="font-bold text-xl mb-3">Hire Me On</h2>
+  <div className="flex flex-wrap gap-4">
+    <a 
+      href="https://www.fiverr.com/s/LdXADda" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="bg-white text-[#3C9189] border-2 border-white px-5 py-3 rounded-lg font-semibold hover:bg-[#2b7068] hover:text-white transition-colors"
+    >
+      Fiverr
+    </a>
+    <a 
+      href="https://www.freelancer.com/u/muhammadasim555" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="bg-white text-[#3C9189] border-2 border-white px-5 py-3 rounded-lg font-semibold hover:bg-[#2b7068] hover:text-white transition-colors"
+    >
+      Freelancer
+    </a>
+  </div>
+</div>
+
                     <p className='text-xl font-bold pt-3'>Feel free to reach out us on.</p>
                     <div className="iop flex space-x-5 pt-4">
                     <p className='text-xl flex items-center '>
