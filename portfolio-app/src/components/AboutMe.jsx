@@ -61,26 +61,19 @@ const AboutMe = () => {
                 <div className="cont flex  lg:justify-between sm:justify-between justify-items-start flex-col sm:space-x-5 lg:space-x-5 md:space-x-5 sm:flex-row md:flex-row lg:flex-row space-y-4 sm:space-y-0 md:space-y-0 lg:space-y-0">
                     <div className=" fir  w-auto rounded-3xl flex flex-col  ">
                         <h1 className='font-bold text-xl font-custom mb-1 text-orange-500'>Experience</h1>
-                        <p>2+ years</p>
-                        <p>Web Developer</p>
+                        <p>3+ years</p>
+                        <p>Full Stack Developer</p>
                     </div>
                     <div className="tir  w-auto  rounded-3xl flex flex-col ">
                     <h1 className='font-bold text-xl font-custom mb-1 text-orange-500'>Education</h1>
                         <p>BS Software Engineering</p>
-                        <p>Numl Islamabad</p>
+                        <p>NUML Islamabad</p>
                         <p>Graduation Feb 2026</p>
                     </div>
                 </div>
                 <div className="com my-6">
   <p className="font-normal text-gray-800 text-md font-custom">
-    Hi, I'm Muhammad Asim — a passionate Full Stack Web Developer with 2+ years of experience building fast, scalable, and modern web applications using the MERN stack and technologies like Next.js, Tailwind CSS, and Redis.
-    As a student at the National University of Modern Languages (NUML), I've built a solid foundation in software engineering and full-stack development.
-  </p>
-
-  <p className="font-normal text-gray-800 text-md font-custom">
-    Through internships at Appium Logics Solutions and Ariesian Tech, I’ve worked on real-world projects involving front-end and back-end technologies.
-    I specialize in crafting responsive UIs, integrating real-time features with WebSockets and WebRTC, and writing clean, maintainable code that scales.
-  </p>
+Hi, I’m Muhammad Asim — a passionate Full Stack Developer with 3+ years of hands-on experience in building fast, scalable, and secure web applications. I specialize in the MERN stack, Next.js, and GraphQL, and I’m equally comfortable integrating real-time technologies (WebSockets, WebRTC) and AI-powered features using Hugging Face and modern APIs. Along with development, I also work with DevOps practices such as Docker, CI/CD pipelines, and cloud deployments, ensuring that the applications I build are production-ready, reliable, and easy to scale.  </p>
 </div>
 
 
