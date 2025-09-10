@@ -141,6 +141,14 @@ const Contact = () => {
     >
       Freelancer
     </a>
+        <a 
+      href="https://www.upwork.com/freelancers/~0178036dae7034b138?mp_source=share" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="bg-white text-[#3C9189] border-2 border-white px-5 py-3 rounded-lg font-semibold hover:bg-[#2b7068] hover:text-white transition-colors"
+    >
+      Upwork
+    </a>
   </div>
 </div>
 
