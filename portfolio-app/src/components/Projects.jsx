@@ -257,43 +257,7 @@ A modern full-stack Quote App built with React, Apollo Client, GraphQL, and Mong
 
 
 
-          <div ref={kk} className=  "card bg-white border border-orange-500 text-black w-full sm:w-11/12 lg:w-[47%] md:w-5/12 rounded-xl grp ">
-            <div className="video-container h-60 sm:mb-4 md:mb-4 lg:mb-4 mb-1 rounded-t-xl"  onMouseEnter={(e) => e.currentTarget.querySelector("video").play()}
-    onMouseLeave={(e) => e.currentTarget.querySelector("video").pause()}>
-              {/* Replace with <video> tag */}
-              <video className="w-full h-full object-cover rounded-xl text-white" src={todovideo} poster={todopic} muted ></video>
-            </div>
-            <div className="card-body  sm:lg-6  md:lg-6 lg:pl-6 sm:pr-6 md:pr-6 lg:pr-6 sm:pb-2 md:pb-2 lg-pb-2 sm:pt-2 md:pt-2 lg:pt-2 pl-3 pr-3 pb-2 pt-2">
-              <h2 className="sm:text-2xl md:text-2xl lg:text-2xl sm:mb-3 md:mb-3 lg:mb-3 mb-1 font-custom font-bold text-orange-500 text-xl ">Todo App</h2>
-              <p className="sm:mb-4 md:mb-4 lg:mb-4 mb-2 font-custom text-black text-md lg:text-md sm:text-md md:text-md">
-              A ReactJS-based Todo app designed for easy task management. The app offers users an intuitive interface to add, edit, and track daily tasks with a smooth user experience.
-              </p>
-              <ul className="list-disc list-inside text-blue-400 text-md">
-                <li>Built with ReactJS for a dynamic and fast UI.
 
-                </li>
-                <li>Task management: Add, edit, and delete tasks.
-
-
-                </li>
-                <li>Real-time updates with state management.
-
-
-                </li>
-                <li>Minimalist and user-friendly design.
-
-
-                </li>
-                <li>Responsive layout for both desktop and mobile users
-                </li>
-              </ul>
-              <div className="flex justify-end pt-4">
-                <button onClick={todoApp} className="text-blue-400 flex items-center">
-                  View <span className="ml-2" >➔</span>
-                </button>
-              </div>
-            </div>
-          </div>
 
 
         </div>
