@@ -122,7 +122,7 @@ A secure, full-stack chatbot application integrating Hugging Face models with a 
               <video className="w-full h-full object-cover rounded-xl text-white" src={ecommerceSite} poster={ecommercePic} muted></video>
             </div>
             <div className="card-body sm:lg-6  md:lg-6 lg:pl-6 sm:pr-6 md:pr-6 lg:pr-6 sm:pb-2 md:pb-2 lg-pb-2 sm:pt-2 md:pt-2 lg:pt-2 pl-3 pr-3 pb-2 pt-2">
-              <h2 className="sm:text-2xl md:text-2xl lg:text-2xl sm:mb-3 md:mb-3 lg:mb-3 mb-1 font-custom font-bold text-orange-500 text-xl ">Ecommerce Website</h2>
+              <h2 className="sm:text-2xl md:text-2xl lg:text-2xl sm:mb-3 md:mb-3 lg:mb-3 mb-1 font-custom font-bold text-orange-500 text-xl ">Ecommerce Platform</h2>
               <p className="sm:mb-4 md:mb-4 lg:mb-4 mb-2 font-custom text-black text-md lg:text-md sm:text-md md:text-md">
               A full-stack eCommerce platform built using the MERN stack. It includes a functional user authentication system, product browsing, shopping cart ,add to cart functionality, add to favorites and checkout.
               </p>
@@ -201,7 +201,7 @@ A full-stack real-time chat platform built with React, Node.js, Express, MongoDB
               <video className="w-full h-full object-cover rounded-xl text-white" poster={quotePic} muted></video>
             </div>
             <div className="card-body sm:lg-6  md:lg-6 lg:pl-6 sm:pr-6 md:pr-6 lg:pr-6 sm:pb-2 md:pb-2 lg-pb-2 sm:pt-2 md:pt-2 lg:pt-2 pl-3 pr-3 pb-2 pt-2">
-              <h2 className="sm:text-2xl md:text-2xl lg:text-2xl sm:mb-3 md:mb-3 lg:mb-3 mb-1 font-custom font-bold text-orange-500 text-xl ">Real-Time Chat Application</h2>
+              <h2 className="sm:text-2xl md:text-2xl lg:text-2xl sm:mb-3 md:mb-3 lg:mb-3 mb-1 font-custom font-bold text-orange-500 text-xl ">Quote Application</h2>
               <p className="sm:mb-4 md:mb-4 lg:mb-4 mb-2 font-custom text-black text-md lg:text-md sm:text-md md:text-md">
 A modern full-stack Quote App built with React, Apollo Client, GraphQL, and MongoDB, designed for secure and engaging content sharing.              </p>
               <ul className="list-disc list-inside text-blue-400 text-md">
