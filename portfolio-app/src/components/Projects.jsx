@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import ecommerceSite from '../assets/videos/video_website.mp4'
+import plumaSite from '../assets/videos/pluma_video.mp4'
 import ariesian_task2 from '../assets/videos/ariesian task-2.mp4'
 import imageGallery from '../assets/videos/ariesian task-1.mp4'
 import todovideo from '../assets/videos/todovideo.mp4'
@@ -9,6 +10,8 @@ import todopic from '../assets/images/todopic.jpg'
 import firsttasktravel from '../assets/images/firsttasktravel.jpg'
 import imageGalleryPic from '../assets/images/imageGalleryPic.jpg'
 import ecommercePic from '../assets/images/ecommercePic.jpg'
+import plumaPic from '../assets/images/plumaPic.jpg'
+
 import { useRef } from 'react';
 import {motion} from "framer-motion"
 
@@ -60,6 +63,9 @@ const explorePak=()=>{
 const todoApp=()=>{
   window.location.href="https://github.com/Muhammadasim225/TodoList_react";
 }
+const pluma=()=>{
+  window.location.href="https://github.com/Muhammadasim225/pluma-social-blog";
+}
 
 
   // useEffect(()=>{
@@ -101,6 +107,35 @@ const todoApp=()=>{
               </div>
             </div>
           </div>
+
+
+          <div className="card bg-white border border-orange-500 text-black w-full sm:w-11/12 lg:w-[47%] md:w-5/12 rounded-xl ">
+            <div className="video-container bg-black h-60 sm:mb-4 md:mb-4 lg:mb-4 mb-1 rounded-t-xl"  onMouseEnter={(e) => e.currentTarget.querySelector("video").play()}
+    onMouseLeave={(e) => e.currentTarget.querySelector("video").pause()}>
+              {/* Replace with <video> tag */}
+              <video className="w-full h-full object-cover rounded-xl text-white" src={plumaSite} poster={plumaPic} muted></video>
+            </div>
+            <div className="card-body sm:lg-6  md:lg-6 lg:pl-6 sm:pr-6 md:pr-6 lg:pr-6 sm:pb-2 md:pb-2 lg-pb-2 sm:pt-2 md:pt-2 lg:pt-2 pl-3 pr-3 pb-2 pt-2">
+              <h2 className="sm:text-2xl md:text-2xl lg:text-2xl sm:mb-3 md:mb-3 lg:mb-3 mb-1 font-custom font-bold text-orange-500 text-xl ">Pluma – Social Blogging Platform</h2>
+              <p className="sm:mb-4 md:mb-4 lg:mb-4 mb-2 font-custom text-black text-md lg:text-md sm:text-md md:text-md">
+A modern, full-stack social blogging platform built with Next.js, GraphQL, PostgreSQL, and Prisma. Designed for creators and readers, it offers rich content creation, social engagement, and a scalable architecture.A modern, full-stack social blogging platform built with Next.js, GraphQL, PostgreSQL, and Prisma. Designed for creators and readers, it offers rich content creation, social engagement, and a scalable architecture.
+              </p>
+              <ul className="list-disc list-inside text-blue-400 text-md">
+                <li>Secure authentication with OAuth & Passport</li>
+                <li>Create, edit, and publish blog posts with images & tags</li>
+                <li>Engage with likes, comments, and follows</li>
+                <li>Advanced search by title, tags, or author</li>
+                <li>Dockerized setup & CI/CD with GitHub Actions</li>
+              </ul>
+              <div className="flex justify-end mt-6">
+                <button onClick={pluma} className="text-blue-400 flex items-center">
+                  View <span className="ml-2">➔</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+      
 
           <div className="card bg-white border border-orange-500 text-black w-full sm:w-11/12 lg:w-[47%] md:w-5/12 rounded-xl ">
             <div className="video-container bg-black h-60 sm:mb-4 md:mb-4 lg:mb-4 mb-1 rounded-t-xl "   onMouseEnter={(e) => e.currentTarget.querySelector("video").play()}
