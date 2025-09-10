@@ -39,7 +39,7 @@ const Experience = () => {
         <div className="flex items-center w-full mb-8 font-custom">
           <div className="w-full flex justify-end pr-4 md:pr-8">
             <div className="bg-[#1b1b1b] p-6 rounded-lg shadow-lg w-full max-w-lg">
-              <h3 className="lg:text-2xl sm:text-lg font-bold mb-5 text-md">Web Developer Intern (JULY 2024 - Present)</h3>
+              <h3 className="lg:text-2xl sm:text-lg font-bold mb-5 text-md">Web Developer Intern (JULY 2024 - OCT 2024)</h3>
               <p className="mt-2 text-gray-400 sm:text-sm text-sm">
               During my internship at Appium Logics Solutions, I worked on developing and enhancing web applications using technologies such as HTML, CSS, JavaScript, Bootstrap, PHP. I gained hands-on experience in frontend and backend development, collaborating with the team to create responsive and user-friendly websites.
               </p>
@@ -58,7 +58,7 @@ const Experience = () => {
           </div>
           <div className=" pl-4 md:pl-8">
             <div className="bg-[#1b1b1b] p-6 rounded-lg shadow-lg w-full max-w-lg">
-              <h3 className="lg:text-2xl sm:text-lg font-bold mb-5 text-md">Front End Developer (Sep 2024 - Present)</h3>
+              <h3 className="lg:text-2xl sm:text-lg font-bold mb-5 text-md">Front End Developer (Sep 2024 - OCT 2024)</h3>
               <p className="mt-2 text-gray-400 sm:text-sm text-sm">
               I am gaining practical experience with technologies like Javascript, Reactjs, and Nodejs mongodb. I am collaborating with the team on projects aimed at enhancing user interfaces and website performance while developing my problem-solving and design skills in a fast-paced environment.
               </p>
