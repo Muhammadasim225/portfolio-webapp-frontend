@@ -6,6 +6,10 @@
     font-weight: 900;
   font-style: normal;
 }
+.paragraph {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+}
 body{
   scroll-behavior: smooth;
 
