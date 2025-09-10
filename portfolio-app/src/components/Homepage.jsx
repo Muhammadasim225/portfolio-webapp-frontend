@@ -60,7 +60,7 @@ const vari = {
           <motion.h1 variants={vari} initial="initial" animate="anima" className='lg:text-orange-500 text-orange-500 lg:font-extrabold lg:text-5xl sm:text-3xl    sm:text-orange-500 sm: font-extrabold  sm:text-center text-2xl text-center pb-1 lg:text-left '>
             Full Stack Web Developer.
           </motion.h1>
-       <motion.p variants={vari} initial="initial" animate="anima" className=' font-inter text-gray-600 text-base lg:text-gray-500 ...'>
+       <motion.p variants={vari} initial="initial" animate="anima" className=' font-custom lg:text-gray-500 ...'>
 A passionate Full Stack Developer with expertise in MERN, Next.js, and GraphQL. I build fast, scalable, and secure applications with clean UI and real-time features using WebSockets and WebRTC. Recently, I’ve expanded my skills into AI integrations with Hugging Face and adopted DevOps practices to deliver reliable, production-ready digital products.</motion.p>
 
 <motion.div variants={vari} initial="initial" animate="anima" className="btns lg:space-x-4 ...">
