@@ -25,11 +25,12 @@ const Services = () => {
       description: 'I build scalable and responsive web applications using the MERN stack or Next.js — optimized for speed, performance, and modern UI standards.',
       link: 'https://www.fiverr.com/s/VY0rvLl',
     },
-    {
-      title: '3D Modelling',
-      description: 'I create clean, detailed 3D models with realistic textures — perfect for product showcases, AR/VR, or concept visualizations.',
-      link: 'https://www.fiverr.com/s/P204aYx',
-    },
+   {
+  title: 'UML Diagrams & IEEE SRS Documentation',
+  description: 'I create professional UML diagrams (class, use case, sequence, activity, ERD, DFD) and complete IEEE-standard SRS documents for software projects. Clear, structured, and client-ready documentation tailored to your requirements.',
+  link: 'https://www.fiverr.com/s/1qw6Kmp', 
+},
+
     {
       title: 'Manual API Testing',
       description: 'I manually test your APIs with Postman, validating their functionality, reliability, and response handling under different scenarios.',
@@ -57,7 +58,7 @@ const Services = () => {
           My Awesome <span className="text-orange-500">Services For You</span>
         </h1>
         <p className="text-gray-400 max-w-xl mx-auto px-6">
-          I offer expert services in full stack development, 3D modeling, UI/UX design, and API testing — all tailored to meet your project’s goals with precision and quality.
+          I offer expert services in full stack development, UI/UX design, UML Diagrams and API testing — all tailored to meet your project’s goals with precision and quality.
         </p>
       </div>
 
