@@ -64,16 +64,20 @@ const vari = {
 A passionate Full Stack Developer with expertise in MERN, Next.js, and GraphQL. I build fast, scalable, and secure applications with clean UI and real-time features using WebSockets and WebRTC. Recently, I’ve expanded my skills into AI integrations with Hugging Face and adopted DevOps practices to deliver reliable, production-ready digital products.</motion.p>
 
 <motion.div variants={vari} initial="initial" animate="anima" className="btns lg:space-x-4 ...">
-  <a href={cv} download="Muhammad_Asim_CV.pdf">
-    <button className='...'>
-      DOWNLOAD CV
-    </button>
-  </a>
-  <Link to="contact" smooth={true} duration={700}>
-    <motion.button whileTap={{ scale:1.05, ease:easeInOut }} transition={{ duration:0.01 }} className='...'>
-      CONTACT INFO
-    </motion.button>
-            </Link>
+ <a href={cv} download="Muhammad_Asim_CV.pdf">
+  <button className='lg:text-orange-500 text-orange-500 lg:text-md lg:border lg:border-orange-500 border border-orange-500 lg:px-6 lg:py-3 lg:hover:bg-orange-500 lg:hover:text-white transition hover:text-white lg:rounded-md lg:font-custom font-custom lg:font-extrabold sm:text-orange-500 sm:text-md sm:border sm:border-orange-500 sm:px-6 px-3 sm:py-3 py-2 sm:rounded-md rounded-md sm:font-custom sm:font-extrabold font-extrabold lg:text-md text-sm flex-shrink-2 min-w-20'>
+    DOWNLOAD CV
+  </button>
+</a>
+
+<Link to="contact" smooth={true} duration={700}>
+  <motion.button 
+    whileTap={{ scale:1.05, ease:easeInOut }} 
+    transition={{ duration:0.01 }}  
+    className='lg:bg-[#3C9189] bg-[#3C9189] lg:text-white text-white lg:text-md lg:px-6 lg:py-3 lg:rounded-md lg:font-custom lg:font-extrabold sm:bg-[#3C9189] sm:text-white sm:text-md sm:px-6 px-3 sm:py-3 py-2 sm:rounded-md rounded-md sm:font-custom font-custom sm:font-extrabold font-bold text-sm min-w-20 sm:space-x-3 space-x-10'>
+    CONTACT INFO
+  </motion.button>
+</Link>
           </motion.div>
         </motion.div>
         {/* Adjusted the width to take less space */}
