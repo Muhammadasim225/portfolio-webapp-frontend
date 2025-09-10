@@ -4,7 +4,7 @@ import blurry from "../assets/images/ppf.png"
 import AboutMe from './AboutMe'
 import { motion ,AnimatePresence, easeInOut} from "framer-motion"
 import { useRef } from 'react'
-import cv from "../assets/public/resume(4).pdf"
+import cv from "../assets/public/cvv.pdf"
 import { Link } from "react-scroll"
 const Homepage = () => {
 const vari = {
@@ -61,8 +61,7 @@ const vari = {
             Full Stack Web Developer.
           </motion.h1>
           <motion.p variants={vari} initial="initial" animate="anima" className='lg:text-gray-500 text-gray-500 lg:font-bold font-bold lg:text-lg sm:text-md  sm:text-center text-[14px] pt-2 text-center lg:text-left sm:text-lg'>
-          A passionate MERN Stack Developer skilled in building fast, scalable web applications with clean UI and real-time features. I specialize in creating responsive, user-focused solutions that turn ideas into powerful, modern digital products.         </motion.p>
-          <motion.div variants={vari} initial="initial" animate="anima" className="btns lg:space-x-4 sm:space-x-3 space-x-3 sm:pt-3 pt-8 sm:mx-auto mx-auto lg:mx-0 md:mx-auto text-center lg:text-left flex-nowrap" style={{ flexWrap: 'nowrap' }}
+A passionate Full Stack Developer skilled in building fast, scalable, and secure web applications. Experienced with the MERN stack, Next.js, GraphQL, and real-time technologies, I create responsive, user-focused solutions. Recently, I’ve also integrated AI models and modern DevOps practices to deliver powerful, production-ready digital products.          <motion.div variants={vari} initial="initial" animate="anima" className="btns lg:space-x-4 sm:space-x-3 space-x-3 sm:pt-3 pt-8 sm:mx-auto mx-auto lg:mx-0 md:mx-auto text-center lg:text-left flex-nowrap" style={{ flexWrap: 'nowrap' }}
           >
           <a href={cv} download="Muhammad_Asim_CV.pdf">
           <button className='lg:text-orange-500 text-orange-500 lg:text-md lg:border lg:border-orange-500 border border-orange-500 lg:px-6 lg:py-3 lg:hover:bg-orange-500 lg:hover:text-white transition hover:text-white lg:rounded-md lg:font-custom font-custom lg:font-extrabold  sm:text-orange-500 sm:text-md sm:border sm:border-orange-500 sm:px-6  px-3 sm:py-3 py-2 sm:rounded-md rounded-md sm:font-custom sm:font-extrabold font-extrabold lg:text-md text-sm flex-shrink-2 min-w-20'>
