@@ -7,7 +7,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        custom: ['"Work Sans"', 'sans-serif'], // Register your custom font here
+        custom: ['"Work Sans"', 'sans-serif'],
+         fontFamily: {
+    inter: ['Inter', 'sans-serif'],
+  },// Register your custom font here
       },
     },
   },
