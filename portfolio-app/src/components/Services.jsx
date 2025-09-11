@@ -50,7 +50,7 @@ const Services = () => {
       initial="hide"
       whileInView="view"
       viewport={{ once: true }}
-      className="w-full lg:pt-16 pt-12 sm:pt-14 sm:px-12 lg:pb-10 bg-[#0f0f0f] lg:px-6"
+      className="w-full lg:pt-16 pt-12 sm:pt-14 sm:px-12 lg:pb-10 bg-[#0f0f0f] lg:px-6 px-4"
     >
       {/* Section Header */}
       <div className="text-center space-y-3">
