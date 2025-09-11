@@ -88,27 +88,29 @@ const vari = {
     </motion.p>
 
     {/* Buttons */}
-    <motion.div 
-      variants={vari} initial="initial" animate="anima" 
-      className="flex flex-col space-y-4 mt-6 lg:mt-20 w-full items-start
-                 lg:flex-row lg:space-y-0 lg:space-x-4"
-    >
-      <a href={cv} download="Muhammad_Asim_CV.pdf">
-        <button className='border border-orange-500 text-orange-500 px-5 py-2 rounded-md font-bold text-sm hover:bg-orange-500 hover:text-white transition'>
-          DOWNLOAD CV
-        </button>
-      </a>
+  {/* Buttons */}
+<motion.div 
+  variants={vari} initial="initial" animate="anima" 
+  className="flex flex-col space-y-4 mt-6 w-full items-stretch
+             sm:flex-row sm:space-y-0 sm:space-x-4 sm:items-center sm:flex-nowrap"
+>
+  <a href={cv} download="Muhammad_Asim_CV.pdf" className="w-full sm:w-auto">
+    <button className='w-full sm:w-auto min-w-[120px] border border-orange-500 text-orange-500 px-5 py-2 rounded-md font-bold text-sm hover:bg-orange-500 hover:text-white transition'>
+      DOWNLOAD CV
+    </button>
+  </a>
 
-      <Link to="contact" smooth={true} duration={700}>
-        <motion.button 
-          whileTap={{ scale:1.05, ease:easeInOut }} 
-          transition={{ duration:0.01 }}  
-          className='bg-[#3C9189] text-white px-5 py-2 rounded-md font-bold text-sm'
-        >
-          CONTACT INFO
-        </motion.button>
-      </Link>
-    </motion.div>
+  <Link to="contact" smooth={true} duration={700} className="w-full sm:w-auto">
+    <motion.button 
+      whileTap={{ scale:1.05, ease:easeInOut }} 
+      transition={{ duration:0.01 }}  
+      className='w-full sm:w-auto min-w-[120px] bg-[#3C9189] text-white px-5 py-2 rounded-md font-bold text-sm'
+    >
+      CONTACT INFO
+    </motion.button>
+  </Link>
+</motion.div>
+
   </motion.div>
 
   {/* Right Image */}
