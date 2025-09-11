@@ -63,7 +63,7 @@ const Services = () => {
       </div>
 
       {/* Service Cards */}
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6 py-10 px-10 font-custom">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6 py-10 px-6 font-custom">
        {services.map((service, index) => (
   <div key={index} className="bg-[#1b1b1b] text-white p-6 rounded-xl shadow-md flex flex-col justify-between">
     <div>
