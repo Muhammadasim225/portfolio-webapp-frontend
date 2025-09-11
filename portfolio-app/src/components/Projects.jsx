@@ -83,7 +83,7 @@ const pluma=()=>{
   
   return (
     <>
-        <motion.div id="projects" ref={projectsRef}  variants={kale} initial="hide" whileInView="view" viewport={{ once: true }} className="w-full lg:px-16 sm:px-16 md:px-0 md:pt-6 md:pb-0 px-10 pt-6 lg:pt-16 sm:pt-14 pb-14">
+        <motion.div id="projects" ref={projectsRef}  variants={kale} initial="hide" whileInView="view" viewport={{ once: true }} className="w-full lg:px-16 sm:px-16 md:px-0 md:pt-6 md:pb-0 px-6 pt-6 lg:pt-16 sm:pt-14 pb-14">
         <div className="head flex flex-col items-center align-middle lg:space-y-3 sm:space-y-3 md:space-y-3 space-y-1 mb-6 ">
         <h6 className=' text-orange-500 lg:text-lg text-sm sm:text-sm font-semibold'>My recent projects
 </h6>
