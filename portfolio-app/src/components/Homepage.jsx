@@ -78,7 +78,7 @@ const vari = {
 
     <motion.p 
       variants={vari} initial="initial" animate="anima" 
-      className='text-left text-sm leading-relaxed text-gray-800 lg:text-gray-500'
+      className=' lg:pt-8 md:pt-8 sm:pt-8 xl:pt-8 pt-6 text-left text-sm leading-relaxed text-gray-800 lg:text-gray-500'
     >
       A passionate Full Stack Developer with expertise in MERN, Next.js, and GraphQL. 
       I build fast, scalable, and secure applications with clean UI and real-time features 
@@ -91,7 +91,7 @@ const vari = {
   {/* Buttons */}
 <motion.div 
   variants={vari} initial="initial" animate="anima" 
-  className="flex flex-col space-y-4 mt-10 pt-10 w-full items-stretch
+  className="flex flex-col space-y-4 lg:pt-8 md:pt-8 sm:pt-8 xl:pt-8 pt-6 w-full items-stretch
              sm:flex-row sm:space-y-0 sm:space-x-4 sm:items-center sm:flex-nowrap"
 >
   <a href={cv} download="Muhammad_Asim_CV.pdf" className="w-full sm:w-auto">
