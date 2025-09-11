@@ -196,7 +196,7 @@ A full-stack real-time chat platform built with React, Node.js, Express, MongoDB
                 <li>Instant updates for new messages and online users</li>
               </ul>
               <div className="mt-auto flex justify-end">
-                <button className="text-blue-400 flex items-center">
+                <button onClick={realChta} className="text-blue-400 flex items-center">
                   View <span className="ml-2">➔</span>
                 </button>
               </div>
