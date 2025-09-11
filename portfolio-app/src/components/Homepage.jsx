@@ -91,7 +91,7 @@ const vari = {
   {/* Buttons */}
 <motion.div 
   variants={vari} initial="initial" animate="anima" 
-  className="flex flex-col space-y-4 mt-6 w-full items-stretch
+  className="flex flex-col space-y-4 lg:mt-10 sm:mt-8 md:mt-8 mt-8 xl:mt-8 w-full items-stretch
              sm:flex-row sm:space-y-0 sm:space-x-4 sm:items-center sm:flex-nowrap"
 >
   <a href={cv} download="Muhammad_Asim_CV.pdf" className="w-full sm:w-auto">
