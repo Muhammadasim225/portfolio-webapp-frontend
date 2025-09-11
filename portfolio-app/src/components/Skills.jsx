@@ -143,13 +143,14 @@ className="content grid grid-cols-2 gap-4 sm:gap-6 md:gap-6 lg:gap-6 sm:m-20 md:
           </motion.div>
 
           {/* MongoDB */}
-          <motion.div
-            variants={fadeInAnimations}
+        <motion.div
+  variants={fadeInAnimations}
   className="card flex flex-col items-center justify-center rounded-xl border border-orange-500 p-4 text-center hover:bg-gray-50 hover:transition-all"
-            <img src={mongodb} alt="MongoDB" className="h-20 w-20 sm:h-28 sm:w-28 lg:h-32 lg:w-32" />
-            <p className="mt-2 text-sm sm:text-base font-semibold text-black">MongoDB</p>
+>
+  <img src={mongodb} alt="MongoDB" className="h-20 w-20 sm:h-28 sm:w-28 lg:h-32 lg:w-32" />
+  <p className="mt-2 text-sm sm:text-base font-semibold text-black">MongoDB</p>
+</motion.div>
 
-          </motion.div>
 
           {/* C */}
           <motion.div
