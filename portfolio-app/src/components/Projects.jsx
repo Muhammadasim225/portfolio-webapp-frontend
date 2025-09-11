@@ -75,6 +75,10 @@ const pluma=()=>{
       window.location.href="https://github.com/Muhammadasim225/quote-app";
 
   }
+    const chatBotClick=()=>{
+      window.location.href="https://github.com/Muhammadasim225/AI-Powered-Chatbot";
+
+  }
     
   
   return (
@@ -107,7 +111,7 @@ A secure, full-stack chatbot application integrating Hugging Face models with a 
                 <li>RESTful APIs with Express.js backend</li>
               </ul>
               <div className="flex justify-end mt-6">
-                <button className="text-blue-400 flex items-center">
+                <button onClick={chatBotClick} className="text-blue-400 flex items-center">
                   View <span className="ml-2">➔</span>
                 </button>
               </div>
