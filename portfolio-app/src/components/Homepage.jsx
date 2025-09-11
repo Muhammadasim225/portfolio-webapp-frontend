@@ -64,7 +64,7 @@ const vari = {
   >
     <motion.h1 
       variants={vari} initial="initial" animate="anima"  
-      className='text-left text-2xl font-extrabold lg:text-5xl lg:text-left lg:pb-5 md:pb-5 xl:pb-5 sm:pb-5 pb-2'
+      className='text-left text-2xl font-extrabold lg:text-5xl lg:text-left'
     >
       Hi, I Am Muhammad Asim,
     </motion.h1>
