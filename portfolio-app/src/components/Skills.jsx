@@ -70,99 +70,123 @@ const Skills = () => {
           variants={container}
           initial="initial"
           animate="animate"
-          className="content grid sm:gap-6 md:gap-6 lg:gap-6 gap-6 sm:m-20 md:m-14 lg:m-20 m-14 sm:grid-cols-2 lg:grid-cols-3 justify-center"
+className="content grid grid-cols-2 gap-4 sm:gap-6 md:gap-6 lg:gap-6 sm:m-20 md:m-14 lg:m-20 m-6 sm:grid-cols-2 lg:grid-cols-3 justify-center"
         >
           {/* JavaScript */}
           <motion.div
             variants={fadeInAnimations}
-            className="card rounded-xl text-orange-500 border border-orange-500 pt-8 pb-5 text-2xl font-custom font-bold hover:bg-gray-50 hover:transition-all"
+  className="card flex flex-col items-center justify-center rounded-xl border border-orange-500 p-4 text-center hover:bg-gray-50 hover:transition-all"
           >
-            <img src={js} alt="JavaScript" className="w-[250px] mx-auto" />
+            <img src={js} alt="JavaScript" className="h-20 w-20 sm:h-28 sm:w-28 lg:h-32 lg:w-32" />
+              <p className="mt-2 text-sm sm:text-base font-semibold text-black">JavaScript</p>
+
           </motion.div>
 
           {/* HTML */}
           <motion.div
             variants={fadeInAnimations}
-            className="card rounded-xl text-orange-500 border border-orange-500 pt-5 pb-5 px-7 text-2xl font-custom font-bold hover:bg-gray-50 hover:transition-all"
+  className="card flex flex-col items-center justify-center rounded-xl border border-orange-500 p-4 text-center hover:bg-gray-50 hover:transition-all"
           >
-            <img src={html} alt="HTML" className="w-[190px] mx-auto" />
+            <img src={html} alt="HTML" className="h-20 w-20 sm:h-28 sm:w-28 lg:h-32 lg:w-32" />
+              <p className="mt-2 text-sm sm:text-base font-semibold text-black">HTML5</p>
+
           </motion.div>
 
           {/* CSS */}
           <motion.div
             variants={fadeInAnimations}
-            className="card rounded-xl text-orange-500 border border-orange-500 pt-8 pb-5 px-[75px] text-2xl font-custom font-bold hover:bg-gray-50 hover:transition-all"
+  className="card flex flex-col items-center justify-center rounded-xl border border-orange-500 p-4 text-center hover:bg-gray-50 hover:transition-all"
           >
-            <img src={css} alt="CSS" className="w-[100px] mx-auto" />
+            <img src={css} alt="CSS" className="h-20 w-20 sm:h-28 sm:w-28 lg:h-32 lg:w-32" />
+              <p className="mt-2 text-sm sm:text-base font-semibold text-black">CSS3</p>
+
           </motion.div>
 
           {/* Java */}
           <motion.div
             variants={fadeInAnimations}
-            className="card rounded-xl text-orange-500 border border-orange-500 pt-11 pb-5 text-2xl font-custom font-bold hover:bg-gray-50 hover:transition-all"
+  className="card flex flex-col items-center justify-center rounded-xl border border-orange-500 p-4 text-center hover:bg-gray-50 hover:transition-all"
           >
-            <img src={java} alt="Java" className="w-[330px] mx-auto" />
+            <img src={java} alt="Java" className="h-20 w-20 sm:h-28 sm:w-28 lg:h-32 lg:w-32" />
+              <p className="mt-2 text-sm sm:text-base font-semibold text-black">Java</p>
+
           </motion.div>
 
           {/* React */}
           <motion.div
             variants={fadeInAnimations}
-            className="card rounded-xl text-orange-500 border border-orange-500 pt-9 pb-5 px-14 text-2xl font-custom font-bold hover:bg-gray-50 hover:transition-all"
+  className="card flex flex-col items-center justify-center rounded-xl border border-orange-500 p-4 text-center hover:bg-gray-50 hover:transition-all"
           >
-            <img src={react} alt="React" className="w-36 mx-auto" />
+            <img src={react} alt="React" className="h-20 w-20 sm:h-28 sm:w-28 lg:h-32 lg:w-32" />
+              <p className="mt-2 text-sm sm:text-base font-semibold text-black">Reactjs</p>
+
           </motion.div>
 
           {/* Node.js */}
           <motion.div
             variants={fadeInAnimations}
-            className="card rounded-xl text-orange-500 border border-orange-500 pt-16 pb-5 px-7 text-2xl font-custom font-bold hover:bg-gray-50 hover:transition-all"
+  className="card flex flex-col items-center justify-center rounded-xl border border-orange-500 p-4 text-center hover:bg-gray-50 hover:transition-all"
           >
-            <img src={nodejs} alt="Node.js" className="w-48 mx-auto" />
+            <img src={nodejs} alt="Node.js" className="h-20 w-20 sm:h-28 sm:w-28 lg:h-32 lg:w-32" />
+              <p className="mt-2 text-sm sm:text-base font-semibold text-black">Nodejs</p>
+
           </motion.div>
 
           {/* MySQL */}
           <motion.div
             variants={fadeInAnimations}
-            className="card rounded-xl text-orange-500 border border-orange-500 pt-10 pb-5 px-9 text-2xl font-custom font-bold hover:bg-gray-50 hover:transition-all"
+  className="card flex flex-col items-center justify-center rounded-xl border border-orange-500 p-4 text-center hover:bg-gray-50 hover:transition-all"
           >
-            <img src={mysql} alt="MySQL" className="w-44 mx-auto" />
+            <img src={mysql} alt="MySQL" className="h-20 w-20 sm:h-28 sm:w-28 lg:h-32 lg:w-32" />
+              <p className="mt-2 text-sm sm:text-base font-semibold text-black">MySQL</p>
+
           </motion.div>
 
           {/* MongoDB */}
           <motion.div
             variants={fadeInAnimations}
-            className="card rounded-xl text-orange-500 border border-orange-500 pt-12 pb-5 px-9 text-2xl font-custom font-bold hover:bg-gray-50 hover:transition-all"
-          >
-            <img src={mongodb} alt="MongoDB" className="w-48 mx-auto" />
+  className="card flex flex-col items-center justify-center rounded-xl border border-orange-500 p-4 text-center hover:bg-gray-50 hover:transition-all"
+            <img src={mongodb} alt="MongoDB" className="h-20 w-20 sm:h-28 sm:w-28 lg:h-32 lg:w-32" />
+            <p className="mt-2 text-sm sm:text-base font-semibold text-black">MongoDB</p>
+
           </motion.div>
 
           {/* C */}
           <motion.div
             variants={fadeInAnimations}
-            className="card rounded-xl text-orange-500 border border-orange-500 pt-8 pb-3 px-2 text-2xl font-custom font-bold hover:bg-gray-50 hover:transition-all"
+  className="card flex flex-col items-center justify-center rounded-xl border border-orange-500 p-4 text-center hover:bg-gray-50 hover:transition-all"
           >
-            <img src={ccc} alt="C Programming" className="w-60 mx-auto" />
+            <img src={ccc} alt="C Programming" className="h-20 w-20 sm:h-28 sm:w-28 lg:h-32 lg:w-32" />
+              <p className="mt-2 text-sm sm:text-base font-semibold text-black">C++</p>
+
           </motion.div>
 
           {/* Python */}
           <motion.div
             variants={fadeInAnimations}
-            className="card rounded-xl text-orange-500 border border-orange-500 pt-10 pb-3 px-16 text-2xl font-custom font-bold hover:bg-gray-50 hover:transition-all"
+  className="card flex flex-col items-center justify-center rounded-xl border border-orange-500 p-4 text-center hover:bg-gray-50 hover:transition-all"
           >
-            <img src={python} alt="Python" className="w-32 mx-auto" />
+            <img src={python} alt="Python" className="h-20 w-20 sm:h-28 sm:w-28 lg:h-32 lg:w-32" />
+              <p className="mt-2 text-sm sm:text-base font-semibold text-black">Python</p>
+
           </motion.div>
 
           <motion.div
             variants={fadeInAnimations}
-            className="card rounded-xl text-orange-500 border border-orange-500 pt-10 pb-10 pl-7 px-16 text-2xl font-custom font-bold hover:bg-gray-50 hover:transition-all"
+  className="card flex flex-col items-center justify-center rounded-xl border border-orange-500 p-4 text-center hover:bg-gray-50 hover:transition-all"
           >
-            <img src={blender} alt="Python" className="w-62 mx-auto" />
+            <img src={blender} alt="Python" className="h-20 w-20 sm:h-28 sm:w-28 lg:h-32 lg:w-32" />
+              <p className="mt-2 text-sm sm:text-base font-semibold text-black">Blender</p>
+
           </motion.div>
            <motion.div
             variants={fadeInAnimations}
-            className="card rounded-xl text-orange-500 border border-orange-500 pt-10 pb-10 pl-7 px-16 text-2xl font-custom font-bold hover:bg-gray-50 hover:transition-all"
+               className="card flex flex-col items-center justify-center rounded-xl border border-orange-500 p-4 text-center hover:bg-gray-50 hover:transition-all"
+
           >
-            <img src={docker} alt="Python" className="w-62 mx-auto" />
+            <img src={docker} alt="Python" className="h-20 w-20 sm:h-28 sm:w-28 lg:h-32 lg:w-32" />
+               <p className="mt-2 text-sm sm:text-base font-semibold text-black">Docker</p>
+
           </motion.div>
           
         </motion.div>
