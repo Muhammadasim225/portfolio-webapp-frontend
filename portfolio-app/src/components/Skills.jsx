@@ -10,6 +10,7 @@ import mysql from "../assets/images/mysql.png";
 import mongodb from "../assets/images/mongodb.png";
 import ccc from "../assets/images/ccc.png";
 import python from "../assets/images/python.png";
+import docker from "../assets/images/dockers.png";
 import { motion } from "framer-motion";
 
 const Skills = () => {
@@ -157,6 +158,13 @@ const Skills = () => {
           >
             <img src={blender} alt="Python" className="w-62 mx-auto" />
           </motion.div>
+           <motion.div
+            variants={fadeInAnimations}
+            className="card rounded-xl text-orange-500 border border-orange-500 pt-10 pb-10 pl-7 px-16 text-2xl font-custom font-bold hover:bg-gray-50 hover:transition-all"
+          >
+            <img src={docker} alt="Python" className="w-62 mx-auto" />
+          </motion.div>
+          
         </motion.div>
       </motion.div>
     </>
