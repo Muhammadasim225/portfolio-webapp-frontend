@@ -38,7 +38,8 @@ const AboutMe = () => {
     <>
     <motion.div id="aboutme" ref={aboutMeRef} // Assign reference
   variants={kale} initial="hide" whileInView="view" viewport={{ once: true }} // Ensures animation runs only once
- className="w-full lg:pt-16 sm:pt-16 md:pt-16 lg:pb-0 md:pb-0 sm:pb-0 sm:pl-10 sm:pr-10 pt-6 pb-0 px-8">
+ className="w-full lg:pt-16 sm:pt-16 md:pt-16 lg:pb-0 md:pb-0 sm:pb-0 sm:pl-10 sm:pr-10 pt-6 pb-0 
+        px-6">
 
 
 
