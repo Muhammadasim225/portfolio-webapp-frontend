@@ -98,7 +98,7 @@ const Contact = () => {
 
 
     return (
-        <motion.div id="contact" variants={kale} initial="hide" whileInView="view" viewport={{ once: true }} className="w-full lg:pt-16 md:pt-16 sm:pt-12 pt-8 pb-0 px-3 md:px-10 lg:px-20">
+        <motion.div id="contact" variants={kale} initial="hide" whileInView="view" viewport={{ once: true }} className="w-full lg:pt-16 md:pt-16 sm:pt-12 pt-8 pb-0 px-2 md:px-10 lg:px-20">
             {/* Head Section */}
             <div className="head flex flex-col items-center lg:space-y-3 md:space-y-3 sm:space-y-3 space-y-2 text-center">
                 <h1 className='font-extrabold text-black headline sm:text-4xl md:text-5xl lg:text-6xl text-3xl'>Contact</h1>
