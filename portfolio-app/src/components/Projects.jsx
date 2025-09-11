@@ -92,13 +92,15 @@ const pluma=()=>{
 
         <div className="content flex flex-wrap gap-10 justify-center lg:my-20 sm:my-10 w-full">
 
-           <div className="card bg-white border border-orange-500 text-black w-full sm:w-11/12 lg:w-[47%] md:w-5/12 rounded-xl ">
+           <div className="card flex flex-col bg-white border border-orange-500 text-black w-full sm:w-11/12 lg:w-[47%] md:w-5/12 rounded-xl ">
             <div className="video-container bg-black h-60 sm:mb-4 md:mb-4 lg:mb-4 mb-1 rounded-t-xl"  onMouseEnter={(e) => e.currentTarget.querySelector("video").play()}
     onMouseLeave={(e) => e.currentTarget.querySelector("video").pause()}>
               {/* Replace with <video> tag */}
               <video className="w-full h-full object-cover rounded-xl text-white" src={botSite} muted></video>
             </div>
-            <div className="card-body sm:lg-6  md:lg-6 lg:pl-6 sm:pr-6 md:pr-6 lg:pr-6 sm:pb-2 md:pb-2 lg-pb-2 sm:pt-2 md:pt-2 lg:pt-2 pl-3 pr-3 pb-2 pt-2">
+            <div className="card-body flex flex-col flex-grow p-4
+              
+              sm:lg-6  md:lg-6 lg:pl-6 sm:pr-6 md:pr-6 lg:pr-6 sm:pb-2 md:pb-2 lg-pb-2 sm:pt-2 md:pt-2 lg:pt-2 pl-3 pr-3 pb-2 pt-2">
               <h2 className="sm:text-2xl md:text-2xl lg:text-2xl sm:mb-3 md:mb-3 lg:mb-3 mb-1 font-custom font-bold text-orange-500 text-xl ">AI-Powered Chatbot</h2>
               <p className="sm:mb-4 md:mb-4 lg:mb-4 mb-2 font-custom text-black text-md lg:text-md sm:text-md md:text-md">
 A secure, full-stack chatbot application integrating Hugging Face models with a production-ready setup. Built with Next.js, Express, Supabase, and Prisma ORM to ensure scalability and security.
@@ -110,7 +112,7 @@ A secure, full-stack chatbot application integrating Hugging Face models with a 
                 <li>Chat history & user data stored with Supabase + Prisma</li>
                 <li>RESTful APIs with Express.js backend</li>
               </ul>
-              <div className="flex justify-end mt-6">
+              <div className="mt-auto flex justify-end">
                 <button onClick={chatBotClick} className="text-blue-400 flex items-center">
                   View <span className="ml-2">➔</span>
                 </button>
@@ -119,13 +121,13 @@ A secure, full-stack chatbot application integrating Hugging Face models with a 
           </div>
 
           
-        <div className="card bg-white border border-orange-500 text-black w-full sm:w-11/12 lg:w-[47%] md:w-5/12 rounded-xl ">
+        <div className="card flex flex-col bg-white border border-orange-500 text-black w-full sm:w-11/12 lg:w-[47%] md:w-5/12 rounded-xl ">
             <div className="video-container bg-black h-60 sm:mb-4 md:mb-4 lg:mb-4 mb-1 rounded-t-xl"  onMouseEnter={(e) => e.currentTarget.querySelector("video").play()}
     onMouseLeave={(e) => e.currentTarget.querySelector("video").pause()}>
               {/* Replace with <video> tag */}
               <video className="w-full h-full object-cover rounded-xl text-white" src={ecommerceSite} poster={ecommercePic} muted></video>
             </div>
-            <div className="card-body sm:lg-6  md:lg-6 lg:pl-6 sm:pr-6 md:pr-6 lg:pr-6 sm:pb-2 md:pb-2 lg-pb-2 sm:pt-2 md:pt-2 lg:pt-2 pl-3 pr-3 pb-2 pt-2">
+            <div className="card-body flex flex-col flex-grow p-4 sm:lg-6  md:lg-6 lg:pl-6 sm:pr-6 md:pr-6 lg:pr-6 sm:pb-2 md:pb-2 lg-pb-2 sm:pt-2 md:pt-2 lg:pt-2 pl-3 pr-3 pb-2 pt-2">
               <h2 className="sm:text-2xl md:text-2xl lg:text-2xl sm:mb-3 md:mb-3 lg:mb-3 mb-1 font-custom font-bold text-orange-500 text-xl ">Ecommerce Platform</h2>
               <p className="sm:mb-4 md:mb-4 lg:mb-4 mb-2 font-custom text-black text-md lg:text-md sm:text-md md:text-md">
               A full-stack eCommerce platform built using the MERN stack. It includes a functional user authentication system, product browsing, shopping cart ,add to cart functionality, add to favorites and checkout.
@@ -136,7 +138,7 @@ A secure, full-stack chatbot application integrating Hugging Face models with a 
                 <li>Fully functional shopping cart and checkout process</li>
                 <li>Smooth UI animations with Framer Motion</li>
               </ul>
-              <div className="flex justify-end mt-6">
+              <div className="mt-auto flex justify-end">
                 <button onClick={ecommerceWeb} className="text-blue-400 flex items-center">
                   View <span className="ml-2">➔</span>
                 </button>
@@ -145,13 +147,13 @@ A secure, full-stack chatbot application integrating Hugging Face models with a 
           </div>
 
 
-          <div className="card bg-white border border-orange-500 text-black w-full sm:w-11/12 lg:w-[47%] md:w-5/12 rounded-xl ">
+          <div className="card flex flex-col bg-white border border-orange-500 text-black w-full sm:w-11/12 lg:w-[47%] md:w-5/12 rounded-xl ">
             <div className="video-container bg-black h-60 sm:mb-4 md:mb-4 lg:mb-4 mb-1 rounded-t-xl"  onMouseEnter={(e) => e.currentTarget.querySelector("video").play()}
     onMouseLeave={(e) => e.currentTarget.querySelector("video").pause()}>
               {/* Replace with <video> tag */}
               <video className="w-full h-full object-cover rounded-xl text-white" src={plumaSite} poster={plumaPic} muted></video>
             </div>
-            <div className="card-body sm:lg-6  md:lg-6 lg:pl-6 sm:pr-6 md:pr-6 lg:pr-6 sm:pb-2 md:pb-2 lg-pb-2 sm:pt-2 md:pt-2 lg:pt-2 pl-3 pr-3 pb-2 pt-2">
+            <div className="card-body flex flex-col flex-grow p-4 sm:lg-6  md:lg-6 lg:pl-6 sm:pr-6 md:pr-6 lg:pr-6 sm:pb-2 md:pb-2 lg-pb-2 sm:pt-2 md:pt-2 lg:pt-2 pl-3 pr-3 pb-2 pt-2">
               <h2 className="sm:text-2xl md:text-2xl lg:text-2xl sm:mb-3 md:mb-3 lg:mb-3 mb-1 font-custom font-bold text-orange-500 text-xl ">Pluma – Social Blogging Platform</h2>
               <p className="sm:mb-4 md:mb-4 lg:mb-4 mb-2 font-custom text-black text-md lg:text-md sm:text-md md:text-md">
 A modern, full-stack social blogging platform built with Next.js, GraphQL, PostgreSQL, and Prisma. Designed for creators and readers, it offers rich content creation, social engagement, and a scalable architecture.A modern, full-stack social blogging platform built with Next.js, GraphQL, PostgreSQL, and Prisma. Designed for creators and readers, it offers rich content creation, social engagement, and a scalable architecture.
@@ -163,7 +165,7 @@ A modern, full-stack social blogging platform built with Next.js, GraphQL, Postg
                 <li>Advanced search by title, tags, or author</li>
                 <li>Dockerized setup & CI/CD with GitHub Actions</li>
               </ul>
-              <div className="flex justify-end mt-6">
+              <div className="mt-auto flex justify-end">
                 <button onClick={pluma} className="text-blue-400 flex items-center">
                   View <span className="ml-2">➔</span>
                 </button>
@@ -171,13 +173,13 @@ A modern, full-stack social blogging platform built with Next.js, GraphQL, Postg
             </div>
           </div>
 
-           <div className="card bg-white border border-orange-500 text-black w-full sm:w-11/12 lg:w-[47%] md:w-5/12 rounded-xl ">
+           <div className="card flex flex-col bg-white border border-orange-500 text-black w-full sm:w-11/12 lg:w-[47%] md:w-5/12 rounded-xl ">
             <div className="video-container bg-black h-60 sm:mb-4 md:mb-4 lg:mb-4 mb-1 rounded-t-xl"  onMouseEnter={(e) => e.currentTarget.querySelector("video").play()}
     onMouseLeave={(e) => e.currentTarget.querySelector("video").pause()}>
               {/* Replace with <video> tag */}
               <video className="w-full h-full object-cover rounded-xl text-white" src={chatSite} poster={chatPic} muted></video>
             </div>
-            <div className="card-body sm:lg-6  md:lg-6 lg:pl-6 sm:pr-6 md:pr-6 lg:pr-6 sm:pb-2 md:pb-2 lg-pb-2 sm:pt-2 md:pt-2 lg:pt-2 pl-3 pr-3 pb-2 pt-2">
+            <div className="card-body flex flex-col flex-grow p-4 sm:lg-6  md:lg-6 lg:pl-6 sm:pr-6 md:pr-6 lg:pr-6 sm:pb-2 md:pb-2 lg-pb-2 sm:pt-2 md:pt-2 lg:pt-2 pl-3 pr-3 pb-2 pt-2">
               <h2 className="sm:text-2xl md:text-2xl lg:text-2xl sm:mb-3 md:mb-3 lg:mb-3 mb-1 font-custom font-bold text-orange-500 text-xl ">Real-Time Chat Application</h2>
               <p className="sm:mb-4 md:mb-4 lg:mb-4 mb-2 font-custom text-black text-md lg:text-md sm:text-md md:text-md">
 A full-stack real-time chat platform built with React, Node.js, Express, MongoDB, and Socket.IO. It supports instant communication, user authentication, and modern chat features for an interactive experience.
@@ -189,7 +191,7 @@ A full-stack real-time chat platform built with React, Node.js, Express, MongoDB
                 <li>Responsive UI with smooth chat interface</li>
                 <li>Instant updates for new messages and online users</li>
               </ul>
-              <div className="flex justify-end mt-6">
+              <div className="mt-auto flex justify-end">
                 <button className="text-blue-400 flex items-center">
                   View <span className="ml-2">➔</span>
                 </button>
@@ -198,13 +200,13 @@ A full-stack real-time chat platform built with React, Node.js, Express, MongoDB
           </div>
 
 
-             <div className="card bg-white border border-orange-500 text-black w-full sm:w-11/12 lg:w-[47%] md:w-5/12 rounded-xl ">
+             <div className="card flex flex-col bg-white border border-orange-500 text-black w-full sm:w-11/12 lg:w-[47%] md:w-5/12 rounded-xl ">
             <div className="video-container bg-black h-60 sm:mb-4 md:mb-4 lg:mb-4 mb-1 rounded-t-xl"  onMouseEnter={(e) => e.currentTarget.querySelector("video").play()}
     onMouseLeave={(e) => e.currentTarget.querySelector("video").pause()}>
               {/* Replace with <video> tag */}
               <video className="w-full h-full object-cover rounded-xl text-white" poster={quotePic} muted></video>
             </div>
-            <div className="card-body sm:lg-6  md:lg-6 lg:pl-6 sm:pr-6 md:pr-6 lg:pr-6 sm:pb-2 md:pb-2 lg-pb-2 sm:pt-2 md:pt-2 lg:pt-2 pl-3 pr-3 pb-2 pt-2">
+            <div className="card-body flex flex-col flex-grow p-4 sm:lg-6  md:lg-6 lg:pl-6 sm:pr-6 md:pr-6 lg:pr-6 sm:pb-2 md:pb-2 lg-pb-2 sm:pt-2 md:pt-2 lg:pt-2 pl-3 pr-3 pb-2 pt-2">
               <h2 className="sm:text-2xl md:text-2xl lg:text-2xl sm:mb-3 md:mb-3 lg:mb-3 mb-1 font-custom font-bold text-orange-500 text-xl ">Quote Application</h2>
               <p className="sm:mb-4 md:mb-4 lg:mb-4 mb-2 font-custom text-black text-md lg:text-md sm:text-md md:text-md">
 A modern full-stack Quote App built with React, Apollo Client, GraphQL, and MongoDB, designed for secure and engaging content sharing.              </p>
@@ -215,7 +217,7 @@ A modern full-stack Quote App built with React, Apollo Client, GraphQL, and Mong
                 <li>Responsive design with Materialize CSS</li>
                 <li>Apollo Client cache for efficient state management</li>
               </ul>
-              <div className="flex justify-end mt-6">
+              <div className="mt-auto flex justify-end">
                 <button onClick={quoteClick} className="text-blue-400 flex items-center">
                   View <span className="ml-2">➔</span>
                 </button>
@@ -225,13 +227,13 @@ A modern full-stack Quote App built with React, Apollo Client, GraphQL, and Mong
 
 
           
-          <div ref={kk} className=  "card bg-white border border-orange-500 text-black w-full sm:w-11/12 lg:w-[47%] md:w-5/12 rounded-xl grp ">
+          <div ref={kk} className=  "card flex flex-col bg-white border border-orange-500 text-black w-full sm:w-11/12 lg:w-[47%] md:w-5/12 rounded-xl grp ">
             <div className="video-container h-60 sm:mb-4 md:mb-4 lg:mb-4 mb-1 rounded-t-xl"   onMouseEnter={(e) => e.currentTarget.querySelector("video").play()}
     onMouseLeave={(e) => e.currentTarget.querySelector("video").pause()}>
               {/* Replace with <video> tag */}
               <video className="w-full h-full object-cover rounded-xl text-white" src={first_taskVideo} poster={firsttasktravel} muted ></video>
             </div>
-            <div className="card-body  sm:lg-6  md:lg-6 lg:pl-6 sm:pr-6 md:pr-6 lg:pr-6 sm:pb-2 md:pb-2 lg-pb-2 sm:pt-2 md:pt-2 lg:pt-2 pl-3 pr-3 pb-2 pt-2">
+            <div className="card-body flex flex-col flex-grow p-4 sm:lg-6  md:lg-6 lg:pl-6 sm:pr-6 md:pr-6 lg:pr-6 sm:pb-2 md:pb-2 lg-pb-2 sm:pt-2 md:pt-2 lg:pt-2 pl-3 pr-3 pb-2 pt-2">
               <h2 className="sm:text-2xl md:text-2xl lg:text-2xl sm:mb-3 md:mb-3 lg:mb-3 mb-1 font-custom font-bold text-orange-500 text-xl ">ExplorePak Website</h2>
               <p className="sm:mb-4 md:mb-4 lg:mb-4 mb-2 font-custom text-black text-md lg:text-md sm:text-md md:text-md">
               A fully responsive travel website showcasing the beauty of Pakistan. It includes engaging layouts, travel packages, a gallery, and social media integration for easy exploration.
@@ -251,7 +253,7 @@ A modern full-stack Quote App built with React, Apollo Client, GraphQL, and Mong
                 <li>FAQ section for common queries and travel tips.
                 </li>
               </ul>
-              <div className="flex justify-end pt-10">
+              <div className="mt-auto flex justify-end">
                 <button onClick={explorePak} className="text-blue-400 flex items-center">
                   View <span className="ml-2" >➔</span>
                 </button>
