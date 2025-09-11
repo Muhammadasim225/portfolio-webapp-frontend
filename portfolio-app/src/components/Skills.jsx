@@ -60,7 +60,7 @@ const Skills = () => {
 
   return (
     <>
-      <motion.div id='skills'   variants={kale} initial="hide" whileInView="view" viewport={{ once: true }} className="w-full lg:pt-16 md:pt-16 pt-10 lg:pb-0 pb-0 sm:pt-10 sm:pb-0">
+      <motion.div id='skills'   variants={kale} initial="hide" whileInView="view" viewport={{ once: true }} className="w-full lg:pt-16 md:pt-16 pt-10 lg:pb-0 pb-0 px-6 sm:pt-10 sm:pb-0">
         <div className="head flex flex-col items-center align-middle space-y-3">
           <h1 className="font-extrabold text-black headline lg:text-6xl sm:text-4xl text-3xl">Skills</h1>
         </div>
