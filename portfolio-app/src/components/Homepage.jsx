@@ -72,7 +72,7 @@ const vari = {
       variants={vari} initial="initial" animate="anima" 
       className='text-left text-2xl font-extrabold text-orange-500 lg:text-5xl lg:text-left'
     >
-      Full Stack Web Developer.
+      Full Stack Engineer.
     </motion.h1>
 
     <motion.p 
