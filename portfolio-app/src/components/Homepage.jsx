@@ -52,7 +52,6 @@ const vari = {
       <Header />
     
      <div 
-  id="homepage" 
   className="mt-8 flex flex-col-reverse items-start px-6 pt-8 pb-8
              lg:mt-10 lg:flex-row lg:items-center lg:justify-between lg:px-16 lg:pt-16 lg:pb-10"
 >
@@ -78,7 +77,7 @@ const vari = {
 
     <motion.p 
       variants={vari} initial="initial" animate="anima" 
-      className=' lg:pt-8 md:pt-8 sm:pt-8 xl:pt-8 pt-6 text-left text-md text-gray-800 lg:text-gray-500'
+      className=' lg:pt-8 md:pt-8 sm:pt-8 xl:pt-8 pt-6 text-left leading-relaxed text-md text-gray-800 lg:text-gray-500'
     >
       A passionate Full Stack Developer with expertise in MERN, Next.js, and GraphQL. 
       I build fast, scalable, and secure applications with clean UI and real-time features 
