@@ -74,7 +74,7 @@ const AboutMe = () => {
                 </div>
                 <div className="com my-6">
   <p className="font-normal text-gray-800 text-md font-custom">
-I’m Muhammad Asim, a Full Stack Web Developer who designs and builds fast, scalable, and user-focused digital experiences. I help startups and businesses turn ideas into functional products using modern web technologies. My focus is always on delivering real impact — from improving user engagement to building systems that grow with the product. I care deeply about clean design, performance, and bringing creativity into problem-solving. Whether it’s developing a full-scale web app or integrating AI-driven features, I aim to make technology simple, effective, and meaningful.</div>
+I’m Muhammad Asim, a Full Stack Web Developer who designs and builds fast, scalable, and user-focused digital experiences. I help startups and businesses turn ideas into functional products using modern web technologies. My focus is always on delivering real impact — from improving user engagement to building systems that grow with the product. I care deeply about clean design, performance, and bringing creativity into problem-solving. Whether it’s developing a full-scale web app or integrating AI-driven features, I aim to make technology simple, effective, and meaningful.</p></div>
 
 
             </div>
