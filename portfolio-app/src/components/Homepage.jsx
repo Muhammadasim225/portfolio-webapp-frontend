@@ -77,13 +77,9 @@ const vari = {
 
     <motion.p 
       variants={vari} initial="initial" animate="anima" 
-      className=' lg:pt-8 md:pt-8 sm:pt-8 xl:pt-8 pt-6 text-left leading-relaxed text-md text-gray-800 lg:text-gray-500'
+      className=' lg:pt-8 md:pt-8 sm:pt-8 xl:pt-8 pt-6 text-left leading-relaxed text-md text-gray-800 lg:text-gray-800'
     >
-      A passionate Full Stack Developer with expertise in MERN, Next.js, and GraphQL. 
-      I build fast, scalable, and secure applications with clean UI and real-time features 
-      using WebSockets and WebRTC. Recently, I’ve expanded my skills into AI integrations 
-      with Hugging Face and adopted DevOps practices to deliver reliable, production-ready 
-      digital products.
+      I’m a Full-Stack Engineer who builds scalable, user-focused web apps using MERN, Next.js, and PostgreSQL. I specialize in clean UI/UX, AI-powered integrations, and automation with Docker, CI/CD, and n8n — helping teams deliver fast, reliable, and production-ready products.
     </motion.p>
 
     {/* Buttons */}
