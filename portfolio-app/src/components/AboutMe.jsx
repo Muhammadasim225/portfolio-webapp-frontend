@@ -42,7 +42,7 @@ const AboutMe = () => {
           <h6 className="text-orange-500 lg:text-md font-semibold sm:text-sm text-[14px]">
             Get To Know More
           </h6>
-          <h1 className="font-extrabold text-black lg:text-6xl sm:text-4xl text-3xl">
+          <h1 className="font-extrabold text-black headline lg:text-6xl sm:text-4xl text-3xl ">
             About Me
           </h1>
         </div>
