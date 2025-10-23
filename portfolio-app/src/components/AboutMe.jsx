@@ -69,13 +69,12 @@ const AboutMe = () => {
                     <h1 className='font-bold text-xl font-custom mb-1 text-orange-500'>Education</h1>
                         <p>BS Software Engineering</p>
                         <p>NUML Islamabad</p>
-                        <p>Graduation Feb 2026</p>
+                        <p>Graduation Jan 2026</p>
                     </div>
                 </div>
                 <div className="com my-6">
   <p className="font-normal text-gray-800 text-md font-custom">
-Hi, I’m Muhammad Asim — a passionate Full Stack Developer with 3+ years of hands-on experience in building fast, scalable, and secure web applications. I specialize in the MERN stack, Next.js, and GraphQL, and I’m equally comfortable integrating real-time technologies (WebSockets, WebRTC) and AI-powered features using Hugging Face and modern APIs. Along with development, I also work with DevOps practices such as Docker, CI/CD pipelines, and cloud deployments, ensuring that the applications I build are production-ready, reliable, and easy to scale.  </p>
-</div>
+I’m Muhammad Asim, a Full Stack Web Developer who designs and builds fast, scalable, and user-focused digital experiences. I help startups and businesses turn ideas into functional products using modern web technologies. My focus is always on delivering real impact — from improving user engagement to building systems that grow with the product. I care deeply about clean design, performance, and bringing creativity into problem-solving. Whether it’s developing a full-scale web app or integrating AI-driven features, I aim to make technology simple, effective, and meaningful.</div>
 
 
             </div>
