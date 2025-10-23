@@ -77,7 +77,7 @@ const vari = {
 
     <motion.p 
       variants={vari} initial="initial" animate="anima" 
-      className=' lg:pt-8 md:pt-8 sm:pt-8 xl:pt-8 pt-6 text-left leading-relaxed text-md text-gray-800 lg:text-gray-800'
+      className=' lg:pt-8 md:pt-8 sm:pt-8 xl:pt-8 pt-3 text-left leading-relaxed text-md text-gray-800 lg:text-gray-800'
     >
       I’m a Full-Stack Engineer who builds scalable, user-focused web apps using MERN, Next.js, and PostgreSQL. I specialize in clean UI/UX, AI-powered integrations, and automation with Docker, CI/CD, and n8n — helping teams deliver fast, reliable, and production-ready products.
     </motion.p>
@@ -111,7 +111,7 @@ const vari = {
   {/* Right Image */}
   <motion.img 
     src={blurry} alt="pic" 
-    className='w-3/4 mx-auto mb-6 lg:w-1/3 lg:mb-0
+    className='w-3/4 mx-auto mb-8 lg:mb-6 sm:mb-6 md:mb-6 lg:mb-6 xl:mb-6 2xl:mb-6 lg:w-1/3 lg:mb-0
                grayscale hover:grayscale-0 hover:scale-105 transition duration-300'
   />
 </div>
