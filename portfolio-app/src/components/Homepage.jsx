@@ -78,7 +78,7 @@ const vari = {
 
     <motion.p 
       variants={vari} initial="initial" animate="anima" 
-      className=' lg:pt-8 md:pt-8 sm:pt-8 xl:pt-8 pt-6 text-left text-md leading-relaxed text-gray-800 lg:text-gray-500'
+      className=' lg:pt-8 md:pt-8 sm:pt-8 xl:pt-8 pt-6 text-left text-md text-gray-800 lg:text-gray-500'
     >
       A passionate Full Stack Developer with expertise in MERN, Next.js, and GraphQL. 
       I build fast, scalable, and secure applications with clean UI and real-time features 
