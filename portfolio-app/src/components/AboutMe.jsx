@@ -38,7 +38,7 @@ const AboutMe = () => {
         className="w-full lg:pt-16 sm:pt-16 md:pt-16 lg:pb-0 md:pb-0 sm:pb-0 sm:px-10 pt-6 px-3"
       >
         {/* Heading Section */}
-        <div className="head flex flex-col items-center space-y-3 mb-10 text-center">
+        <div className="head flex flex-col items-center align-middle lg:space-y-3 sm:space-y-3 md:space-y-3 space-y-1 mb-6 ">
           <h6 className="text-orange-500 lg:text-md font-semibold sm:text-sm text-[14px]">
             Get To Know More
           </h6>
