@@ -59,7 +59,7 @@ const vari = {
   <motion.div  
     variants={container} 
     animate="animate"  
-    className="lg:pb-5 md:pb-5 xl:pb-5 sm:pb-5 pb-5 2xl:pb-5 flex flex-col space-y-3 text-black w-full lg:w-3/5"
+    className="lg:pb-5 md:pb-5 xl:pb-5 sm:pb-5 pb-3 2xl:pb-5 flex flex-col space-y-3 text-black w-full lg:w-3/5"
   >
     <motion.h1 
       variants={vari} initial="initial" animate="anima"  
