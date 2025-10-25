@@ -10,10 +10,12 @@ const experiences = [
     company: "10Pearls",
     date: "September 2025 - Present",
     logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsTe4Lhl5x_oMPMYpfIiIBIywiN98MedMw0A&s",
-    description: `Building a full-stack Notes App with user authentication, CRUD, and rich-text editor.
-Writing unit tests (Mocha/Chai, Jest) and using Pino for logs.
-Integrated MongoDB and MySQL, maintained code quality with SonarQube.
-Using Git/GitHub under mentor guidance following best practices.`,
+    description: `Selected as a Shine Intern (Cohort 6) focused on full-stack development under mentorship.
+Built a Notes App featuring authentication, CRUD, and a rich-text editor.
+Implemented logging (Pino), testing (Mocha/Chai, Jest), and database integration (MongoDB + MySQL).
+Maintained code quality with SonarQube and version control via Git/GitHub.`,
+    technologies: "React, Node.js, MongoDB, MySQL, Jest, Mocha, Pino, Git, SonarQube",
+    learning: "→ Strengthened scalable app development, clean coding, and testing practices under mentor guidance."
   },
   {
     id: 2,
@@ -21,18 +23,23 @@ Using Git/GitHub under mentor guidance following best practices.`,
     company: "Appium Logics Solutions",
     date: "June 2024 - October 2024",
     logo: logAl,
-    description: `Built and improved web applications using HTML, CSS, JavaScript, Bootstrap, PHP, and Firebase.
-Contributed to both front-end UI and back-end functionality development.`,
+    description: `Contributed to both front-end and back-end web projects using HTML, CSS, JavaScript, Bootstrap, PHP, and Firebase.
+Designed responsive user interfaces and integrated database connectivity.
+Collaborated in a small remote team to enhance web functionality and optimize UX.`,
+    technologies: "HTML, CSS, JavaScript, Bootstrap, PHP, Firebase",
+    learning: "→ Strengthened my understanding of full-stack workflows and user-centered web design."
   },
   {
     id: 3,
-    title: "Front End Developer Intern (Remote)",
+    title: "Front-End Developer Intern (Remote)",
     company: "Ariesian Tech",
     date: "September 2024 - October 2024",
     logo: ariesian,
-    description: `Worked on front-end development tasks in a dynamic team environment.
+    description: `Worked on front-end development tasks in a collaborative environment.
 Developed responsive web pages using HTML, CSS, JavaScript, and ReactJS.
-Improved the user interface of ongoing projects with guidance from mentors.`,
+Improved UI consistency and accessibility for ongoing projects under mentor guidance.`,
+    technologies: "ReactJS, HTML, CSS, JavaScript",
+    learning: "→ Enhanced UI/UX design approach and teamwork skills through real project collaboration."
   },
 ];
 
@@ -67,7 +74,7 @@ const Experience = () => {
           visible: {
             opacity: 1,
             y: 0,
-            transition: { duration: 1, type: "spring", stiffness: 60 },
+            transition: { duration: 1, type: 'spring', stiffness: 60 },
           },
         }}
         className="text-center mb-12"
@@ -76,8 +83,8 @@ const Experience = () => {
           Work <span className="text-orange-500">Experience</span>
         </h2>
         <p className="text-gray-400 mt-3 text-sm sm:text-base max-w-2xl mx-auto">
-          My hands-on experience in web and full-stack development under
-          real-world mentorship and teamwork.
+          A timeline of my hands-on experience in full-stack and front-end web development,
+          shaped through real-world mentorship, teamwork, and professional learning.
         </p>
       </motion.div>
 
@@ -105,14 +112,18 @@ const Experience = () => {
 
             {/* Content */}
             <div className="flex-1">
-              <h3 className="text-xl sm:text-2xl font-bold mb-2">
-                {exp.title}
-              </h3>
-              <p className="text-orange-500 text-sm sm:text-base mb-3">
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-1">{exp.title}</h3>
+              <p className="text-orange-500 text-sm sm:text-base mb-3 font-medium">
                 {exp.company} · {exp.date}
               </p>
               <p className="text-gray-400 text-sm sm:text-base leading-relaxed whitespace-pre-line">
                 {exp.description}
+              </p>
+              <p className="text-gray-300 text-sm sm:text-base mt-3">
+                <strong>Technologies Used:</strong> {exp.technologies}
+              </p>
+              <p className="italic text-gray-500 text-xs sm:text-sm mt-2">
+                {exp.learning}
               </p>
             </div>
           </motion.div>
