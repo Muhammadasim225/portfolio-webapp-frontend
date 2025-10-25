@@ -74,13 +74,19 @@ const vari = {
     >
       Full Stack Engineer.
     </motion.h1>
+<motion.p
+  variants={vari}
+  initial="initial"
+  animate="anima"
+  className="pt-3 sm:pt-6 md:pt-8 lg:pt-8 xl:pt-8 
+             text-left text-gray-800 leading-relaxed 
+             text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-[1.4rem]"
+>
+  I’m a Full-Stack Engineer who builds scalable, user-focused web apps using MERN, Next.js, and PostgreSQL. 
+  I specialize in clean UI/UX, AI-powered integrations, and automation with Docker, CI/CD, and n8n — 
+  helping teams deliver fast, reliable, and production-ready products.
+</motion.p>
 
-    <motion.p 
-      variants={vari} initial="initial" animate="anima" 
-      className=' lg:pt-8 md:pt-8 sm:pt-8 xl:pt-8 pt-3 text-left leading-relaxed text-md md:text-2xl sm:text-xl text-gray-800 lg:text-gray-800'
-    >
-      I’m a Full-Stack Engineer who builds scalable, user-focused web apps using MERN, Next.js, and PostgreSQL. I specialize in clean UI/UX, AI-powered integrations, and automation with Docker, CI/CD, and n8n — helping teams deliver fast, reliable, and production-ready products.
-    </motion.p>
 
     {/* Buttons */}
   {/* Buttons */}
