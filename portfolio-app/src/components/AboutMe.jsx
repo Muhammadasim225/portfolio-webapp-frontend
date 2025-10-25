@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import secondd from '../assets/images/webinar.png';
+import secondd from '../assets/images/webinar22.png';
 import { motion } from 'framer-motion';
 
 const AboutMe = () => {
