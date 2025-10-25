@@ -95,7 +95,7 @@ const Experience = () => {
             key={exp.id}
             custom={i}
             variants={fadeUp}
-            className="flex flex-col sm:flex-row items-start sm:items-center gap-6 bg-[#1b1b1b] p-6 sm:p-8 rounded-2xl shadow-lg transition-transform duration-500 hover:scale-[1.03] hover:shadow-orange-500/20 border border-transparent hover:border-orange-500/30"
+            className="flex flex-col sm:flex-row items-start sm:items-center gap-6 bg-[#1b1b1b] p-6 sm:p-8 rounded-2xl shadow-lg transition-transform duration-500 hover:scale-[1.03]  border border-transparent hover:border-orange-500/30"
           >
             {/* Logo */}
             <motion.div
