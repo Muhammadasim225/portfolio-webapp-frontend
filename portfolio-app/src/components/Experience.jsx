@@ -79,7 +79,7 @@ const Experience = () => {
         }}
         className="text-center mb-12"
       >
-        <h2 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold">
+        <h2 className="text-3xl sm:text-4xl lg:text-6xl headline font-extrabold">
           Work <span className="text-orange-500">Experience</span>
         </h2>
         <p className="text-gray-400 mt-3 text-sm sm:text-base max-w-2xl mx-auto">
