@@ -59,25 +59,25 @@ const vari = {
   <motion.div  
     variants={container} 
     animate="animate"  
-    className="lg:pb-5 md:pb-5 xl:pb-5 sm:pb-5 pb-0 2xl:pb-5 flex flex-col space-y-2 lg:space-y-3 md:space-y-3 sm:space-y-3  xl:space-y-3 2xl:space-y-3 text-black w-full lg:w-3/5"
+    className="lg:pb-5 md:pb-5 xl:pb-5 sm:pb-5 pb-0 2xl:pb-5 flex flex-col space-y-2 lg:space-y-3 md:space-y-1 sm:space-y-1  xl:space-y-3 2xl:space-y-3 text-black w-full lg:w-3/5"
   >
     <motion.h1 
       variants={vari} initial="initial" animate="anima"  
-      className='text-left text-2xl font-extrabold lg:text-5xl lg:text-left'
+      className='text-left text-2xl sm:text-5xl md:text-6xl  font-extrabold lg:text-5xl lg:text-left'
     >
       Hi, I Am Muhammad Asim,
     </motion.h1>
 
     <motion.h1 
       variants={vari} initial="initial" animate="anima" 
-      className='text-left text-2xl font-extrabold text-orange-500 lg:text-5xl lg:text-left'
+      className='text-left text-2xl sm:text-5xl md:text-6xl font-extrabold text-orange-500 lg:text-5xl lg:text-left'
     >
       Full Stack Engineer.
     </motion.h1>
 
     <motion.p 
       variants={vari} initial="initial" animate="anima" 
-      className=' lg:pt-8 md:pt-8 sm:pt-8 xl:pt-8 pt-3 text-left leading-relaxed text-md text-gray-800 lg:text-gray-800'
+      className=' lg:pt-8 md:pt-8 sm:pt-8 xl:pt-8 pt-3 text-left leading-relaxed text-md md:text-xl sm:text-xl text-gray-800 lg:text-gray-800'
     >
       I’m a Full-Stack Engineer who builds scalable, user-focused web apps using MERN, Next.js, and PostgreSQL. I specialize in clean UI/UX, AI-powered integrations, and automation with Docker, CI/CD, and n8n — helping teams deliver fast, reliable, and production-ready products.
     </motion.p>
