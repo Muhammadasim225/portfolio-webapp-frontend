@@ -1,72 +1,104 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import logAl from '../assets/images/LogoAL.png'
-import ariesian from '../assets/images/ariesian.jpg'
+import React from "react";
+import { motion } from "framer-motion";
+import logAl from "../assets/images/LogoAL.png";
+import ariesian from "../assets/images/ariesian.jpg";
+
+const experiences = [
+  {
+    id: 1,
+    title: "MERN Stack Intern (Remote)",
+    company: "10Pearls",
+    date: "September 2025 - Present",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/7/7e/10Pearls_logo.png", // optional or local if you have
+    description: `Building a full-stack Notes App with user authentication, CRUD, and rich-text editor.
+    Writing unit tests (Mocha/Chai, Jest) and using Pino for logs.
+    Integrated MongoDB and MySQL, maintained code quality with SonarQube.
+    Using Git/GitHub under mentor guidance following best practices.`,
+  },
+  {
+    id: 2,
+    title: "Web Developer Intern (Remote)",
+    company: "Appium Logics Solutions",
+    date: "June 2024 - October 2024",
+    logo: logAl,
+    description: `Built and improved web applications using HTML, CSS, JavaScript, Bootstrap, PHP, and Firebase.
+    Contributed to both front-end UI and back-end functionality development.`,
+  },
+  {
+    id: 3,
+    title: "Front End Developer Intern (Remote)",
+    company: "Ariesian Tech",
+    date: "September 2024 - October 2024",
+    logo: ariesian,
+    description: `Worked on front-end development tasks in a dynamic team environment.
+    Developed responsive web pages using HTML, CSS, JavaScript, and ReactJS.
+    Improved the user interface of ongoing projects with guidance from mentors.`,
+  },
+];
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 80 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.3, duration: 0.8 },
+  }),
+};
 
 const Experience = () => {
-
-  const kale = {
-    hide: {
-      opacity: 0,
-      y:100
-
-    },
-    view:{
-      opacity: 1,
-      y:0,
-      transition: {
-        delay: 0,
-          duration: 2
-         
-              // Use a number, not a string
-      }
-    },
-  
-  
-  };
-
   return (
-    <motion.div id='experience' variants={kale} initial="hide" whileInView="view" viewport={{ once: true }}  className="w-full lg:px-16 md:px-12 sm:px-6 px-4 lg:pt-16 md:pt-16 pt-8 sm:pt-12 pb-6 bg-[#0f0f0f] text-white">
-      <div className="head flex flex-col items-center align-middle space-y-3">
-        <span className="font-extrabold text-white headline lg:text-6xl sm:text-4xl text-3xl">Work <span className='lg:text-6xl text-orange-500 sm:text-4xl text-3xl'>Experience</span></span>
+    <motion.section
+      id="experience"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      className="w-full bg-[#0f0f0f] text-white py-16 px-4 sm:px-6 md:px-12 lg:px-16"
+    >
+      {/* Heading */}
+      <div className="text-center mb-12">
+        <h2 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold">
+          Work <span className="text-orange-500">Experience</span>
+        </h2>
+        <p className="text-gray-400 mt-3 text-sm sm:text-base max-w-2xl mx-auto">
+          My hands-on experience in web and full-stack development under
+          real-world mentorship and teamwork.
+        </p>
       </div>
 
-      <div className="content my-20 w-full relative z-[0.5px]">
-        {/* Vertical timeline line */}
-       
+      {/* Experience Cards */}
+      <div className="flex flex-col gap-10 max-w-6xl mx-auto">
+        {experiences.map((exp, i) => (
+          <motion.div
+            key={exp.id}
+            custom={i}
+            variants={fadeUp}
+            className="flex flex-col sm:flex-row items-start sm:items-center gap-6 bg-[#1b1b1b] p-6 sm:p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-[1.02] hover:shadow-orange-500/20"
+          >
+            {/* Logo */}
+            <div className="flex-shrink-0">
+              <img
+                src={exp.logo}
+                alt={exp.company}
+                className="w-16 h-16 sm:w-20 sm:h-20 object-cover rounded-full border-4 border-[#4d5c8f]"
+              />
+            </div>
 
-        {/* Experience 1 */}
-        <div className="flex items-center w-full mb-8 font-custom">
-          <div className="w-full flex justify-end pr-4 md:pr-8">
-            <div className="bg-[#1b1b1b] p-6 rounded-lg shadow-lg w-full max-w-lg">
-              <h3 className="lg:text-2xl sm:text-lg font-bold mb-5 text-md">Web Developer Intern (JULY 2024 - OCT 2024)</h3>
-              <p className="mt-2 text-gray-400 sm:text-sm text-sm">
-              During my internship at Appium Logics Solutions, I worked on developing and enhancing web applications using technologies such as HTML, CSS, JavaScript, Bootstrap, PHP. I gained hands-on experience in frontend and backend development, collaborating with the team to create responsive and user-friendly websites.
+            {/* Content */}
+            <div className="flex-1">
+              <h3 className="text-xl sm:text-2xl font-bold mb-2">
+                {exp.title}
+              </h3>
+              <p className="text-orange-400 text-sm sm:text-base mb-3">
+                {exp.company} · {exp.date}
+              </p>
+              <p className="text-gray-400 text-sm sm:text-base leading-relaxed whitespace-pre-line">
+                {exp.description}
               </p>
             </div>
-          </div>
-          {/* Center icon */}
-          <div className="w-12 h-12 bg-[#4d5c8f] rounded-full border-4 border-white flex items-center justify-center">
-            <img src={logAl} alt="UNT Logo" className="w-10 h-10 rounded-full z-10" />
-          </div>
-        </div>
-
-        {/* Experience 2 */}
-        <div className="flex items-center w-full mb-8 font-custom">
-          <div className="w-12 h-12 bg-[#4d5c8f] rounded-full border-4 border-white flex items-center justify-center">
-            <img src={ariesian} alt="Other Logo" className="w-10 h-10 z-10 rounded-full" />
-          </div>
-          <div className=" pl-4 md:pl-8">
-            <div className="bg-[#1b1b1b] p-6 rounded-lg shadow-lg w-full max-w-lg">
-              <h3 className="lg:text-2xl sm:text-lg font-bold mb-5 text-md">Front End Developer (Sep 2024 - OCT 2024)</h3>
-              <p className="mt-2 text-gray-400 sm:text-sm text-sm">
-              I am gaining practical experience with technologies like Javascript, Reactjs, and Nodejs mongodb. I am collaborating with the team on projects aimed at enhancing user interfaces and website performance while developing my problem-solving and design skills in a fast-paced environment.
-              </p>
-            </div>
-          </div>
-        </div>
+          </motion.div>
+        ))}
       </div>
-    </motion.div>
+    </motion.section>
   );
 };
 
