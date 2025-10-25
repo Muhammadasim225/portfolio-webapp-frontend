@@ -59,7 +59,7 @@ const vari = {
   <motion.div  
     variants={container} 
     animate="animate"  
-    className="lg:pb-5 md:pb-5 xl:pb-5 sm:pb-5 pb-0 2xl:pb-5 flex flex-col space-y-2 lg:space-y-3 md:space-y-1 sm:space-y-2  xl:space-y-3 2xl:space-y-3 text-black w-full lg:w-3/5"
+    className="lg:pb-5 md:pb-5 xl:pb-5 sm:pb-5 pb-0 2xl:pb-5 flex flex-col space-y-1 lg:space-y-3 md:space-y-1 sm:space-y-2  xl:space-y-3 2xl:space-y-3 text-black w-full lg:w-3/5"
   >
     <motion.h1 
       variants={vari} initial="initial" animate="anima"  
@@ -88,7 +88,9 @@ const vari = {
   variants={vari}
   initial="initial"
   animate="anima"
-  className="flex flex-col space-y-3 pt-6 sm:flex-row sm:space-y-0 sm:space-x-4 sm:items-center w-full justify-center"
+  className="flex flex-col space-y-3 pt-6 
+             sm:flex-row sm:space-y-0 sm:space-x-4 sm:items-center w-full
+             justify-center lg:justify-start"
 >
   {/* DOWNLOAD CV Button */}
   <a href={cv} download="Muhammad_Asim_CV.pdf" className="w-full sm:w-auto">
@@ -122,6 +124,7 @@ const vari = {
     </motion.button>
   </Link>
 </motion.div>
+
 
 
   </motion.div>
