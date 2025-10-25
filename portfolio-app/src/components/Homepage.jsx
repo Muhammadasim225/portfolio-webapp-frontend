@@ -4,7 +4,7 @@ import blurry from "../assets/images/ppf.png"
 import AboutMe from './AboutMe'
 import { motion ,AnimatePresence, easeInOut} from "framer-motion"
 import { useRef } from 'react'
-import cv from "../assets/public/cvv.pdf"
+import cv from "../assets/public/cvvv.pdf"
 import { Link } from "react-scroll"
 const Homepage = () => {
 const vari = {
