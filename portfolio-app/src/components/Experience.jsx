@@ -8,7 +8,7 @@ const experiences = [
   id: 0,
   title: "Junior Full Stack Developer",
   company: "FunPrime Technology",
-  date: "January 2025 - Present",
+  date: "January 2026 - Present",
   logo: "https://www.funprimetechnology.com/images/logo.png", // baad me real logo laga dena
   description: `Working as a backend-focused Full Stack Developer on production-level web applications.
 
