@@ -82,9 +82,12 @@ const vari = {
              text-left text-gray-800 leading-relaxed 
              text-sm sm:text-lg md:text-lg lg:text-md xl:text-md 2xl:text-[1.4rem]"
 >
-  I’m a Full-Stack Engineer who builds scalable, user-focused web apps using MERN, Next.js, and PostgreSQL. 
-  I specialize in clean UI/UX, AI-powered integrations, and automation with Docker, CI/CD, and n8n — 
-  helping teams deliver fast, reliable, and production-ready products.
+  I’m a Full-Stack Engineer with a strong backend focus, starting my journey with the MERN stack and gradually evolving into AI-powered and automation-driven systems.
+
+I build scalable web applications using React, Next.js, Python (FastAPI), and modern databases like PostgreSQL and MongoDB. I work with Docker, CI/CD pipelines, and workflow automation using n8n to deliver production-ready solutions.
+
+Recently, I’ve been working with Generative AI tools such as LangChain, LangGraph, Hugging Face Transformers, and RAG pipelines, while exploring vector databases and embeddings to build intelligent, real-world applications.
+
 </motion.p>
 
 
