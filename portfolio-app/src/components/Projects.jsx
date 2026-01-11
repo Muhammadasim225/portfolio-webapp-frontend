@@ -83,6 +83,10 @@ const pluma=()=>{
    const realChta=()=>{
       window.location.href="https://github.com/Muhammadasim225/Real-TIme-Chat-App";
   }
+  const fypProject = () => {
+  window.location.href = "https://github.com/Muhammadasim225/Virtual-Dressing-Room-Frontend.git"
+}
+
     
   
   return (
@@ -123,6 +127,48 @@ A secure, full-stack chatbot application integrating Hugging Face models with a 
               </div>
             </div>
           </div>
+
+          <div className="card flex flex-col bg-white border border-orange-500 text-black w-full sm:w-11/12 lg:w-[47%] md:w-5/12 rounded-xl">
+  <div
+    className="video-container bg-black h-60 sm:mb-4 md:mb-4 lg:mb-4 mb-1 rounded-t-xl"
+    onMouseEnter={(e) => e.currentTarget.querySelector("video")?.play()}
+    onMouseLeave={(e) => e.currentTarget.querySelector("video")?.pause()}
+  >
+    <video
+      className="w-full h-full object-cover rounded-xl"
+      src={fypVideo}
+      poster={fypPic}
+      muted
+    />
+  </div>
+
+  <div className="card-body flex flex-col flex-grow p-4 pl-3 pr-3 pb-2 pt-2">
+    <h2 className="sm:text-2xl font-bold text-orange-500 text-xl mb-1">
+      FitVision – Smart Mirror (FYP)
+    </h2>
+
+    <p className="mb-2 text-black text-md">
+      A Final Year Project focused on an AI-powered Smart Mirror experience for
+      virtual clothing try-on. The system integrates computer vision, AR overlays,
+      real-time synchronization, and a scalable full-stack architecture.
+    </p>
+
+    <ul className="list-disc list-inside text-blue-400 text-md">
+      <li>AI-based virtual try-on using Computer Vision</li>
+      <li>Real-time camera & AR clothing overlays</li>
+      <li>Next.js kiosk app + Flutter mobile app</li>
+      <li>FastAPI backend with MongoDB</li>
+      <li>Admin dashboard for product & model management</li>
+    </ul>
+
+    <div className="mt-auto flex justify-end">
+      <button onClick={fypProject} className="text-blue-400 flex items-center">
+        View <span className="ml-2">➔</span>
+      </button>
+    </div>
+  </div>
+</div>
+
 
           
         <div className="card flex flex-col bg-white border border-orange-500 text-black w-full sm:w-11/12 lg:w-[47%] md:w-5/12 rounded-xl ">
