@@ -111,11 +111,11 @@ const pluma=()=>{
   
   {/* Image Container */}
   <div className="video-container bg-black h-60 sm:mb-4 md:mb-4 lg:mb-4 mb-1 rounded-t-xl">
-    <img
-      src={realStatePic}
+    <video
       alt="AI Real Estate Lead Manager"
-      className="w-full h-full object-cover rounded-t-xl"
-    />
+      className="w-full h-full object-cover rounded-xl text-white"
+       poster={realStatePic} muted
+    /></video>
   </div>
 
   {/* Card Body */}
@@ -182,11 +182,12 @@ A secure, full-stack chatbot application integrating Hugging Face models with a 
   
   {/* Image Container */}
   <div className="video-container bg-black h-60 sm:mb-4 md:mb-4 lg:mb-4 mb-1 rounded-t-xl">
-    <img
-      src={fypPic}
-      alt="FitVision Smart Mirror FYP"
+    <video
+      alt="FitVision Smart Mirror"
       className="w-full h-full object-cover rounded-t-xl"
-    />
+       className="w-full h-full object-cover rounded-xl text-white"
+       poster={fypPic} muted
+    /></video>
   </div>
 
   {/* Card Body */}
@@ -200,13 +201,13 @@ A secure, full-stack chatbot application integrating Hugging Face models with a 
     <p className="sm:mb-4 md:mb-4 lg:mb-4 mb-2 font-custom text-black text-md lg:text-md sm:text-md md:text-md">
       A Final Year Project focused on an AI-powered Smart Mirror experience for
       virtual clothing try-on. The system integrates computer vision, AR overlays,
-      real-time synchronization, and a scalable full-stack architecture.
+      real-time notification, community sharing, and a scalable full-stack architecture.
     </p>
 
     <ul className="list-disc list-inside text-blue-400 text-md">
       <li>AI-based virtual try-on using Computer Vision</li>
       <li>Real-time camera & AR clothing overlays</li>
-      <li>Next.js kiosk app + Flutter mobile app</li>
+      <li>Flutter mobile app</li>
       <li>FastAPI backend with Firebase</li>
       <li>Admin dashboard for product & model management</li>
     </ul>
