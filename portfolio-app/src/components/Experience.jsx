@@ -5,6 +5,26 @@ import ariesian from "../assets/images/ariesian.jpg";
 
 const experiences = [
   {
+  id: 0,
+  title: "Junior Full Stack Developer",
+  company: "FunPrime Technology",
+  date: "January 2025 - Present",
+  logo: "https://www.funprimetechnology.com/images/logo.png", // baad me real logo laga dena
+  description: `Working as a backend-focused Full Stack Developer on production-level web applications.
+
+Developing and maintaining high-performance REST APIs using Python and FastAPI.
+Building backend services, business logic, and secure API workflows.
+Creating frontend components using JavaScript and ReactJS where required.
+Implementing Docker-based containerization for consistent development and deployment.
+Writing and maintaining automated tests using Playwright.
+Working on web scraping scripts for structured data extraction.
+Setting up and maintaining CI/CD pipelines for automated builds and deployments.
+Using Linux commands and server environments for debugging, deployment, and optimization.`,
+  technologies: "Python, FastAPI, ReactJS, JavaScript, Docker, Playwright, Web Scraping, CI/CD, Linux",
+  learning: "→ Gaining strong hands-on experience in backend engineering, DevOps practices, and production-grade system development."
+}
+
+  {
     id: 1,
     title: "MERN Stack Intern (Remote)",
     company: "10Pearls",
