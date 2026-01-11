@@ -88,6 +88,9 @@ const pluma=()=>{
   const fypProject = () => {
   window.location.href = "https://github.com/fitvision032-bit/fitvision"
 }
+//   const realState = () => {
+//   window.location.href = "https://github.com/Muhammadasim225/RealEstate-AI-Lead-Manager"
+// }
 
     
   
@@ -102,7 +105,7 @@ const pluma=()=>{
 
         <div className="content flex flex-wrap gap-10 justify-center lg:my-20 sm:my-10 w-full">
 
-           <div className="card flex flex-col bg-white border border-orange-500 text-black w-full sm:w-11/12 lg:w-[47%] md:w-5/12 rounded-xl ">
+        <div className="card flex flex-col bg-white border border-orange-500 text-black w-full sm:w-11/12 lg:w-[47%] md:w-5/12 rounded-xl">
             <div className="video-container bg-black h-60 sm:mb-4 md:mb-4 lg:mb-4 mb-1 rounded-t-xl"  onMouseEnter={(e) => e.currentTarget.querySelector("video").play()}
     onMouseLeave={(e) => e.currentTarget.querySelector("video").pause()}>
               {/* Replace with <video> tag */}
