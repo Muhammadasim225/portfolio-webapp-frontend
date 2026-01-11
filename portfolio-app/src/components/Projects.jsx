@@ -15,6 +15,8 @@ import ecommercePic from '../assets/images/ecommercePic.jpg'
 import plumaPic from '../assets/images/plumaPic.jpg'
 import chatPic from '../assets/images/chatPic.png'
 import quotePic from '../assets/images/quotePic.jpg'
+import fypPic from '../assets/images/fypPic.jpg'
+
 
 
 
