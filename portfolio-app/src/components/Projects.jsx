@@ -112,10 +112,12 @@ const pluma=()=>{
   {/* Image Container */}
   <div className="video-container bg-black h-60 sm:mb-4 md:mb-4 lg:mb-4 mb-1 rounded-t-xl">
     <video
-      alt="AI Real Estate Lead Manager"
-      className="w-full h-full object-cover rounded-xl text-white"
-       poster={realStatePic} muted
-    /></video>
+  alt="AI Real Estate Lead Manager"
+  className="w-full h-full object-cover rounded-xl text-white"
+  poster={realStatePic}
+  muted
+>
+</video>
   </div>
 
   {/* Card Body */}
@@ -182,12 +184,13 @@ A secure, full-stack chatbot application integrating Hugging Face models with a 
   
   {/* Image Container */}
   <div className="video-container bg-black h-60 sm:mb-4 md:mb-4 lg:mb-4 mb-1 rounded-t-xl">
-    <video
-      alt="FitVision Smart Mirror"
-      className="w-full h-full object-cover rounded-t-xl"
-       className="w-full h-full object-cover rounded-xl text-white"
-       poster={fypPic} muted
-    /></video>
+   <video
+  alt="FitVision Smart Mirror"
+  className="w-full h-full object-cover rounded-xl text-white"
+  poster={fypPic}
+  muted
+>
+</video>
   </div>
 
   {/* Card Body */}
