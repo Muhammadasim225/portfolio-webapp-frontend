@@ -88,9 +88,9 @@ const pluma=()=>{
   const fypProject = () => {
   window.location.href = "https://github.com/fitvision032-bit/fitvision"
 }
-//   const realState = () => {
-//   window.location.href = "https://github.com/Muhammadasim225/RealEstate-AI-Lead-Manager"
-// }
+  const realState = () => {
+  window.location.href = "https://github.com/Muhammadasim225/RealEstate-AI-Lead-Manager"
+}
 
     
   
@@ -136,7 +136,7 @@ A secure, full-stack chatbot application integrating Hugging Face models with a 
         <div className="card flex flex-col bg-white border border-orange-500 text-black w-full sm:w-11/12 lg:w-[47%] md:w-5/12 rounded-xl">
   
   {/* Image Container */}
-  <div className="image-container bg-black h-60 sm:mb-4 md:mb-4 lg:mb-4 mb-1 rounded-t-xl">
+  <div className="video-container bg-black h-60 sm:mb-4 md:mb-4 lg:mb-4 mb-1 rounded-t-xl">
     <img
       src={fypPic}
       alt="FitVision Smart Mirror FYP"
@@ -145,12 +145,14 @@ A secure, full-stack chatbot application integrating Hugging Face models with a 
   </div>
 
   {/* Card Body */}
-  <div className="card-body flex flex-col flex-grow p-4 pl-3 pr-3 pb-2 pt-2">
-    <h2 className="sm:text-2xl font-bold text-orange-500 text-xl mb-1">
+   <div className="card-body flex flex-col flex-grow p-4
+              
+              sm:lg-6  md:lg-6 lg:pl-6 sm:pr-6 md:pr-6 lg:pr-6 sm:pb-2 md:pb-2 lg-pb-2 sm:pt-2 md:pt-2 lg:pt-2 pl-3 pr-3 pb-2 pt-2">
+    <h2 className="sm:text-2xl md:text-2xl lg:text-2xl sm:mb-3 md:mb-3 lg:mb-3 mb-1 font-custom font-bold text-orange-500 text-xl ">
       FitVision – Smart Mirror (FYP)
     </h2>
 
-    <p className="mb-2 text-black text-md">
+    <p className="sm:mb-4 md:mb-4 lg:mb-4 mb-2 font-custom text-black text-md lg:text-md sm:text-md md:text-md">
       A Final Year Project focused on an AI-powered Smart Mirror experience for
       virtual clothing try-on. The system integrates computer vision, AR overlays,
       real-time synchronization, and a scalable full-stack architecture.
