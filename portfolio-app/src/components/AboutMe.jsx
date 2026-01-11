@@ -84,14 +84,12 @@ const AboutMe = () => {
             {/* About Paragraph */}
             <div className="com my-6">
               <p className="font-normal text-gray-800 text-md font-custom">
-                I’m Muhammad Asim, a Full Stack Web Developer who designs and builds fast,
-                scalable, and user-focused digital experiences. I help startups and businesses
-                turn ideas into functional products using modern web technologies. My focus is
-                always on delivering real impact — from improving user engagement to building
-                systems that grow with the product. I care deeply about clean design,
-                performance, and bringing creativity into problem-solving. Whether it’s
-                developing a full-scale web app or integrating AI-driven features, I aim to make
-                technology simple, effective, and meaningful.
+                I’m Muhammad Asim, a Full Stack Engineer with a strong backend focus and a passion for building scalable, real-world applications.
+
+I started my journey with the MERN stack and gradually evolved into working with modern backend systems, automation, and AI-powered solutions. I enjoy turning complex ideas into clean, efficient, and production-ready products.
+
+My work focuses on performance, scalability, and long-term maintainability — whether it’s building full-stack web applications, designing backend architectures, or integrating intelligent AI-driven features. I believe good software is not just functional, but reliable, thoughtful, and built to grow.
+
               </p>
             </div>
           </div>
