@@ -22,7 +22,7 @@ Setting up and maintaining CI/CD pipelines for automated builds and deployments.
 Using Linux commands and server environments for debugging, deployment, and optimization.`,
   technologies: "Python, FastAPI, ReactJS, JavaScript, Docker, Playwright, Web Scraping, CI/CD, Linux",
   learning: "→ Gaining strong hands-on experience in backend engineering, DevOps practices, and production-grade system development."
-}
+},
 
   {
     id: 2,
