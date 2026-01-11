@@ -28,7 +28,7 @@ Using Linux commands and server environments for debugging, deployment, and opti
     id: 2,
     title: "MERN Stack Intern (Remote)",
     company: "10Pearls",
-    date: "September 2025 - Present",
+    date: "September 2025 - November 2025",
     logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsTe4Lhl5x_oMPMYpfIiIBIywiN98MedMw0A&s",
     description: `Selected as a Shine Intern (Cohort 6) focused on full-stack development under mentorship.
 Built a Notes App featuring authentication, CRUD, and a rich-text editor.
