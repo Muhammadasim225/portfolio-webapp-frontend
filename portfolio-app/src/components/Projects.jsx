@@ -86,7 +86,7 @@ const pluma=()=>{
       window.location.href="https://github.com/Muhammadasim225/Real-TIme-Chat-App";
   }
   const fypProject = () => {
-  window.location.href = "https://github.com/Muhammadasim225/Virtual-Dressing-Room-Frontend.git"
+  window.location.href = "https://github.com/fitvision032-bit/fitvision"
 }
 
     
