@@ -16,6 +16,8 @@ import plumaPic from '../assets/images/plumaPic.jpg'
 import chatPic from '../assets/images/chatPic.png'
 import quotePic from '../assets/images/quotePic.jpg'
 import fypPic from '../assets/images/fypPic.jpg'
+import realStatePic from '../assets/images/realStatePic.jpg'
+
 
 
 
@@ -104,6 +106,49 @@ const pluma=()=>{
         </div>
 
         <div className="content flex flex-wrap gap-10 justify-center lg:my-20 sm:my-10 w-full">
+
+            <div className="card flex flex-col bg-white border border-orange-500 text-black w-full sm:w-11/12 lg:w-[47%] md:w-5/12 rounded-xl">
+  
+  {/* Image Container */}
+  <div className="video-container bg-black h-60 sm:mb-4 md:mb-4 lg:mb-4 mb-1 rounded-t-xl">
+    <img
+      src={realStatePic}
+      alt="AI Real Estate Lead Manager"
+      className="w-full h-full object-cover rounded-t-xl"
+    />
+  </div>
+
+  {/* Card Body */}
+   <div className="card-body flex flex-col flex-grow p-4
+              
+              sm:lg-6  md:lg-6 lg:pl-6 sm:pr-6 md:pr-6 lg:pr-6 sm:pb-2 md:pb-2 lg-pb-2 sm:pt-2 md:pt-2 lg:pt-2 pl-3 pr-3 pb-2 pt-2">
+    <h2 className="sm:text-2xl md:text-2xl lg:text-2xl sm:mb-3 md:mb-3 lg:mb-3 mb-1 font-custom font-bold text-orange-500 text-xl ">
+     AI Real Estate Lead Manager
+    </h2>
+
+    <p className="sm:mb-4 md:mb-4 lg:mb-4 mb-2 font-custom text-black text-md lg:text-md sm:text-md md:text-md">
+      An AI-powered system that helps real estate agencies automatically capture, qualify, and follow up with property leads. 
+It replaces manual calling and spreadsheets with smart AI that talks to clients, filters serious buyers, and sends only high-quality leads to agents.
+
+    </p>
+
+    <ul className="list-disc list-inside text-blue-400 text-md">
+      <li>Captures leads from website, ads, and chat</li>
+      <li>AI chats with buyers & sellers 24/7</li>
+      <li>Automatically qualifies hot vs cold leads</li>
+      <li>Sends follow-ups via WhatsApp, email & chat</li>
+      <li>Agent dashboard to manage all leads in one place</li>
+    </ul>
+
+    <div className="mt-auto flex justify-end">
+      <button onClick={realState} className="text-blue-400 flex items-center">
+        View <span className="ml-2">➔</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+          
 
         <div className="card flex flex-col bg-white border border-orange-500 text-black w-full sm:w-11/12 lg:w-[47%] md:w-5/12 rounded-xl">
             <div className="video-container bg-black h-60 sm:mb-4 md:mb-4 lg:mb-4 mb-1 rounded-t-xl"  onMouseEnter={(e) => e.currentTarget.querySelector("video").play()}
