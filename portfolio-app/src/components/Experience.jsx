@@ -5,7 +5,7 @@ import ariesian from "../assets/images/ariesian.jpg";
 
 const experiences = [
   {
-  id: 0,
+  id: 1,
   title: "Junior Full Stack Developer",
   company: "FunPrime Technology",
   date: "January 2026 - Present",
@@ -25,7 +25,7 @@ Using Linux commands and server environments for debugging, deployment, and opti
 }
 
   {
-    id: 1,
+    id: 2,
     title: "MERN Stack Intern (Remote)",
     company: "10Pearls",
     date: "September 2025 - Present",
@@ -38,7 +38,7 @@ Maintained code quality with SonarQube and version control via Git/GitHub.`,
     learning: "→ Strengthened scalable app development, clean coding, and testing practices under mentor guidance."
   },
   {
-    id: 2,
+    id: 3,
     title: "Web Developer Intern (Remote)",
     company: "Appium Logics Solutions",
     date: "June 2024 - October 2024",
@@ -50,7 +50,7 @@ Collaborated in a small remote team to enhance web functionality and optimize UX
     learning: "→ Strengthened my understanding of full-stack workflows and user-centered web design."
   },
   {
-    id: 3,
+    id: 4,
     title: "Front-End Developer Intern (Remote)",
     company: "Ariesian Tech",
     date: "September 2024 - October 2024",
