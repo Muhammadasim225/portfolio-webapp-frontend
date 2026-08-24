@@ -1,101 +1,79 @@
-import React, { useRef } from 'react';
-import secondd from '../assets/images/webinar22.png';
+import React from 'react';
 import { motion } from 'framer-motion';
+import aboutImage from '../assets/images/webinar22.png';
+import { fadeUp, staggerContainer, viewportOnce } from '../lib/motion';
+import Section from './Section';
+
+const FACTS = [
+  { title: 'Experience', lines: ['2+ years', 'Full Stack Development'] },
+  { title: 'Focus', lines: ['Backend & AI Automation', 'Python · FastAPI · Node.js'] },
+  { title: 'Education', lines: ['BS Software Engineering', 'NUML Islamabad · Jan 2026'] },
+];
 
 const AboutMe = () => {
-  const kale = {
-    hide: {
-      opacity: 0,
-      y: 100,
-    },
-    view: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: 0,
-        duration: 2,
-      },
-    },
-  };
-
-  const aboutMeRef = useRef(null);
-
-  const scrollToSection = (refName) => {
-    if (refName === 'aboutMeRef' && aboutMeRef.current) {
-      aboutMeRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
-    <>
-      <motion.div
-        id="aboutme"
-        ref={aboutMeRef}
-        variants={kale}
-        initial="hide"
-        whileInView="view"
-        viewport={{ once: true }}
-        className="w-full lg:pt-16 sm:pt-16 md:pt-16 lg:pb-0 md:pb-0 sm:pb-0 sm:px-10 pt-6 px-3"
-      >
-        {/* Heading Section */}
-        <div className="head flex flex-col items-center align-middle lg:space-y-3 sm:space-y-3 md:space-y-3 space-y-1 mb-6 ">
-          <h6 className="text-orange-500 lg:text-md font-semibold sm:text-sm text-[14px]">
-            Get To Know More
-          </h6>
-          <h1 className="font-extrabold text-black headline lg:text-6xl sm:text-4xl text-3xl ">
-            About Me
-          </h1>
-        </div>
-
-        {/* Content Section */}
-        <div className="content flex flex-col lg:flex-row lg:mt-10 lg:min-w-screen sm:items-center">
-          {/* Left Image */}
-          <div className="first lg:w-1/3 sm:w-3/4 w-full lg:ml-8 mb-6 flex justify-center">
+    <Section id="aboutme" tone="light" eyebrow="Get To Know Me" title="About Me">
+      <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-start lg:gap-16">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={viewportOnce}
+          className="w-full max-w-sm shrink-0 lg:w-2/5"
+        >
+          <div className="overflow-hidden rounded-2xl border border-black/5 bg-white shadow-xl shadow-black/5">
             <img
-              src={secondd}
-              alt="Developer Illustration"
-              className="w-full max-w-[29rem] object-contain rounded-xl mx-auto"
+              src={aboutImage}
+              alt="Developer illustration"
+              className="h-full w-full object-contain"
+              loading="lazy"
+              decoding="async"
             />
           </div>
+        </motion.div>
 
-          {/* Right Text Content */}
-          <div className="second lg:w-3/5 lg:ml-16 lg:mr-32 lg:mb-10 px-2 w-full sm:mt-10 sm:mx-10 md:w-4/5">
-            <div className="cont flex flex-col sm:flex-row justify-between space-y-4 sm:space-y-0 sm:space-x-5">
-              {/* Experience */}
-              <div className="fir w-auto rounded-3xl flex flex-col">
-                <h1 className="font-bold text-xl font-custom mb-1 text-orange-500">
-                  Experience
-                </h1>
-                <p>3+ years</p>
-                <p>Full Stack Developer</p>
+        <motion.div
+          variants={staggerContainer(0.1)}
+          initial="hidden"
+          whileInView="show"
+          viewport={viewportOnce}
+          className="flex w-full flex-col gap-8"
+        >
+          <motion.div variants={fadeUp} className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+            {FACTS.map((fact) => (
+              <div key={fact.title} className="rounded-xl border border-black/5 bg-white p-4 shadow-sm">
+                <p className="font-mono text-xs font-semibold uppercase tracking-wide text-accent">
+                  {fact.title}
+                </p>
+                {fact.lines.map((line) => (
+                  <p key={line} className="mt-1 text-sm text-gray-700">
+                    {line}
+                  </p>
+                ))}
               </div>
+            ))}
+          </motion.div>
 
-              {/* Education */}
-              <div className="tir w-auto rounded-3xl flex flex-col">
-                <h1 className="font-bold text-xl font-custom mb-1 text-orange-500">
-                  Education
-                </h1>
-                <p>BS Software Engineering</p>
-                <p>NUML Islamabad</p>
-                <p>Graduation Jan 2026</p>
-              </div>
-            </div>
-
-            {/* About Paragraph */}
-            <div className="com my-6">
-              <p className="font-normal text-gray-800 text-md font-custom">
-                I’m Muhammad Asim, a Full Stack Engineer with a strong backend focus and a passion for building scalable, real-world applications.
-
-I started my journey with the MERN stack and gradually evolved into working with modern backend systems, automation, and AI-powered solutions. I enjoy turning complex ideas into clean, efficient, and production-ready products.
-
-My work focuses on performance, scalability, and long-term maintainability — whether it’s building full-stack web applications, designing backend architectures, or integrating intelligent AI-driven features. I believe good software is not just functional, but reliable, thoughtful, and built to grow.
-
-              </p>
-            </div>
-          </div>
-        </div>
-      </motion.div>
-    </>
+          <motion.div variants={fadeUp} className="space-y-4 text-sm leading-relaxed text-gray-700 sm:text-base">
+            <p>
+              I&apos;m Muhammad Asim, a Full Stack Software Engineer with a strong backend focus and a
+              passion for building scalable, production-ready applications. I work across the MERN
+              stack and Python/FastAPI backends, and I&apos;m comfortable owning a feature end to end —
+              from API design and authentication (JWT &amp; Redis) to Docker-based deployment.
+            </p>
+            <p>
+              Lately I&apos;ve been focused on AI-powered automation — integrating LLMs (OpenAI, Gemini,
+              Groq) and building agentic workflows with LangChain, LangGraph, and n8n to turn manual,
+              repetitive processes into reliable, automated systems.
+            </p>
+            <p>
+              I care about performance, scalability, and long-term maintainability. Good software
+              isn&apos;t just functional — it&apos;s reliable, well-tested, and built to grow.
+            </p>
+          </motion.div>
+        </motion.div>
+      </div>
+    </Section>
   );
 };
 

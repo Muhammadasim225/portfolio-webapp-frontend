@@ -1,173 +1,113 @@
 import React from 'react';
-import js from "../assets/images/JavaScript-Logo.png";
-import html from "../assets/images/html-removebg-preview.png";
-import css from "../assets/images/css-logo.png";
-import java from "../assets/images/java-removebg-preview.png";
-import react from "../assets/images/react.png";
-import nodejs from "../assets/images/nodejs.png";
-import blender from "../assets/images/blender (2).png";
-import mysql from "../assets/images/mysql.png";
-import mongodb from "../assets/images/mongodb.png";
-import ccc from "../assets/images/ccc.png";
-import python from "../assets/images/python.png";
-import docker from "../assets/images/dockers.png";
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
+import js from '../assets/images/JavaScript-Logo.png';
+import html from '../assets/images/html-removebg-preview.png';
+import css from '../assets/images/css-logo.png';
+import react from '../assets/images/react.png';
+import nodejs from '../assets/images/nodejs.png';
+import mysql from '../assets/images/mysql.png';
+import mongodb from '../assets/images/mongodb.png';
+import python from '../assets/images/python.png';
+import docker from '../assets/images/dockers.png';
+import { fadeUp, staggerContainer, viewportOnce } from '../lib/motion';
+import Section from './Section';
+
+const CATEGORIES = [
+  {
+    name: 'Frontend',
+    skills: [
+      { label: 'React.js', icon: react },
+      { label: 'Javascript', icon: js },
+      { label: 'HTML', icon: html },
+      { label: 'CSS', icon: css },
+      { label: 'Next.js' },
+    ],
+  },
+  {
+    name: 'Backend',
+    skills: [
+      { label: 'Node.js', icon: nodejs },
+      { label: 'Python', icon: python },
+      { label: 'FastAPI' },
+      { label: 'Express.js' },
+      { label: 'REST APIs' },
+      { label: 'JWT Auth' },
+    ],
+  },
+  {
+    name: 'Databases',
+    skills: [
+      { label: 'MongoDB', icon: mongodb },
+      { label: 'MySQL', icon: mysql },
+      { label: 'PostgreSQL' },
+      { label: 'Redis' },
+      { label: 'SQL Server' },
+    ],
+  },
+  {
+    name: 'AI & Automation',
+    skills: [
+      { label: 'LangChain' },
+      { label: 'LangGraph' },
+      { label: 'n8n' },
+      { label: 'HuggingFace' },
+      { label: 'RAG Pipelines' },
+      { label: 'LLM Integration' },
+    ],
+  },
+  {
+    name: 'DevOps & Tools',
+    skills: [
+      { label: 'Docker', icon: docker },
+      { label: 'CI/CD' },
+      { label: 'Linux' },
+      { label: 'Git & GitHub' },
+      { label: 'VPS Deployment' },
+    ],
+  },
+];
+
+const SkillChip = ({ label, icon }) => (
+  <div className="flex items-center gap-2 rounded-full border border-black/5 bg-white px-4 py-2 shadow-sm">
+    {icon && <img src={icon} alt="" loading="lazy" decoding="async" className="h-5 w-5 object-contain" />}
+    <span className="text-sm font-medium text-gray-700">{label}</span>
+  </div>
+);
 
 const Skills = () => {
-  const fadeInAnimations = {
-    initial: {
-      opacity: 0,
-      y: 5, // Add some vertical movement to the animation for better visual effect
-    },
-    animate: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5, // Adjust duration as needed
-        ease: "easeOut",
-      },
-    },
-  };
-
-
-  const kale = {
-    hide: {
-      opacity: 0,
-      y:100
-
-    },
-    view:{
-      opacity: 1,
-      y:0,
-      transition: {
-        delay: 0,
-          duration: 2
-         
-              // Use a number, not a string
-      }
-    },
-  
-  
-  };
-
-  const container = {
-    animate: {
-      transition: {
-        staggerChildren: 0.2, // Adds delay between card animations
-      },
-    },
-  };
-
   return (
-    <>
-      <motion.div id='skills'   variants={kale} initial="hide" whileInView="view" viewport={{ once: true }} className="w-full lg:pt-16 md:pt-16 pt-10 lg:pb-0 pb-0 px-6 sm:pt-10 sm:pb-0">
-        <div className="head flex flex-col items-center align-middle space-y-3">
-          <h1 className="font-extrabold text-black headline lg:text-6xl sm:text-4xl text-3xl">Skills</h1>
-        </div>
-
-        {/* Grid layout for skills */}
-        <motion.div
-          variants={container}
-          initial="initial"
-          animate="animate"
-          className="content grid sm:gap-6 md:gap-6 lg:gap-6 gap-6 sm:m-20 md:m-14 lg:m-20 m-14 sm:grid-cols-2 lg:grid-cols-3 justify-center"
-        >
-          {/* JavaScript */}
+    <Section
+      id="skills"
+      tone="light"
+      eyebrow="What I Work With"
+      title="Skills"
+      subtitle="A practical toolkit built around backend engineering, AI automation, and modern full-stack development."
+    >
+      <motion.div
+        variants={staggerContainer(0.1)}
+        initial="hidden"
+        whileInView="show"
+        viewport={viewportOnce}
+        className="grid grid-cols-1 gap-6 md:grid-cols-2"
+      >
+        {CATEGORIES.map((category) => (
           <motion.div
-            variants={fadeInAnimations}
-            className="card rounded-xl text-orange-500 border border-orange-500 pt-8 pb-5 text-2xl font-custom font-bold hover:bg-gray-50 hover:transition-all"
+            key={category.name}
+            variants={fadeUp}
+            className="rounded-2xl border border-black/5 bg-paper-soft p-6"
           >
-            <img src={js} alt="JavaScript" className="w-[250px] mx-auto" />
+            <h3 className="mb-4 font-mono text-xs font-semibold uppercase tracking-wide text-accent">
+              {category.name}
+            </h3>
+            <div className="flex flex-wrap gap-3">
+              {category.skills.map((skill) => (
+                <SkillChip key={skill.label} label={skill.label} icon={skill.icon} />
+              ))}
+            </div>
           </motion.div>
-
-          {/* HTML */}
-          <motion.div
-            variants={fadeInAnimations}
-            className="card rounded-xl text-orange-500 border border-orange-500 pt-5 pb-5 px-7 text-2xl font-custom font-bold hover:bg-gray-50 hover:transition-all"
-          >
-            <img src={html} alt="HTML" className="w-[190px] mx-auto" />
-          </motion.div>
-
-          {/* CSS */}
-          <motion.div
-            variants={fadeInAnimations}
-            className="card rounded-xl text-orange-500 border border-orange-500 pt-8 pb-5 px-[75px] text-2xl font-custom font-bold hover:bg-gray-50 hover:transition-all"
-          >
-            <img src={css} alt="CSS" className="w-[100px] mx-auto" />
-          </motion.div>
-
-          {/* Java */}
-          <motion.div
-            variants={fadeInAnimations}
-            className="card rounded-xl text-orange-500 border border-orange-500 pt-11 pb-5 text-2xl font-custom font-bold hover:bg-gray-50 hover:transition-all"
-          >
-            <img src={java} alt="Java" className="w-[330px] mx-auto" />
-          </motion.div>
-
-          {/* React */}
-          <motion.div
-            variants={fadeInAnimations}
-            className="card rounded-xl text-orange-500 border border-orange-500 pt-9 pb-5 px-14 text-2xl font-custom font-bold hover:bg-gray-50 hover:transition-all"
-          >
-            <img src={react} alt="React" className="w-36 mx-auto" />
-          </motion.div>
-
-          {/* Node.js */}
-          <motion.div
-            variants={fadeInAnimations}
-            className="card rounded-xl text-orange-500 border border-orange-500 pt-16 pb-5 px-7 text-2xl font-custom font-bold hover:bg-gray-50 hover:transition-all"
-          >
-            <img src={nodejs} alt="Node.js" className="w-48 mx-auto" />
-          </motion.div>
-
-          {/* MySQL */}
-          <motion.div
-            variants={fadeInAnimations}
-            className="card rounded-xl text-orange-500 border border-orange-500 pt-10 pb-5 px-9 text-2xl font-custom font-bold hover:bg-gray-50 hover:transition-all"
-          >
-            <img src={mysql} alt="MySQL" className="w-44 mx-auto" />
-          </motion.div>
-
-          {/* MongoDB */}
-          <motion.div
-            variants={fadeInAnimations}
-            className="card rounded-xl text-orange-500 border border-orange-500 pt-12 pb-5 px-9 text-2xl font-custom font-bold hover:bg-gray-50 hover:transition-all"
-          >
-            <img src={mongodb} alt="MongoDB" className="w-48 mx-auto" />
-          </motion.div>
-
-          {/* C */}
-          <motion.div
-            variants={fadeInAnimations}
-            className="card rounded-xl text-orange-500 border border-orange-500 pt-8 pb-3 px-2 text-2xl font-custom font-bold hover:bg-gray-50 hover:transition-all"
-          >
-            <img src={ccc} alt="C Programming" className="w-60 mx-auto" />
-          </motion.div>
-
-          {/* Python */}
-          <motion.div
-            variants={fadeInAnimations}
-            className="card rounded-xl text-orange-500 border border-orange-500 pt-10 pb-3 px-16 text-2xl font-custom font-bold hover:bg-gray-50 hover:transition-all"
-          >
-            <img src={python} alt="Python" className="w-32 mx-auto" />
-          </motion.div>
-
-          <motion.div
-            variants={fadeInAnimations}
-            className="card rounded-xl text-orange-500 border border-orange-500 pt-10 pb-10 pl-7 px-16 text-2xl font-custom font-bold hover:bg-gray-50 hover:transition-all"
-          >
-            <img src={blender} alt="Python" className="w-62 mx-auto" />
-          </motion.div>
-           <motion.div
-            variants={fadeInAnimations}
-            className="card rounded-xl text-orange-500 border border-orange-500 pt-10 pb-10 pl-7 px-16 text-2xl font-custom font-bold hover:bg-gray-50 hover:transition-all"
-          >
-            <img src={docker} alt="Python" className="w-62 mx-auto" />
-          </motion.div>
-          
-        </motion.div>
+        ))}
       </motion.div>
-    </>
+    </Section>
   );
 };
 

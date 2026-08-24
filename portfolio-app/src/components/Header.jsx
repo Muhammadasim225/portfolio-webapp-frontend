@@ -1,195 +1,156 @@
-import React, { useState } from 'react';
-import github from '../assets/images/github.png';
-import linkedin from '../assets/images/linkedin.png';
+import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faTimes, faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-scroll';
 
+const NAV_LINKS = [
+  { to: 'aboutme', label: 'About' },
+  { to: 'projects', label: 'Projects' },
+  { to: 'experience', label: 'Experience' },
+  { to: 'skills', label: 'Skills' },
+  { to: 'services', label: 'Services' },
+  { to: 'contact', label: 'Contact' },
+];
+
+const GITHUB_URL = 'https://github.com/Muhammadasim225';
+const LINKEDIN_URL = 'https://www.linkedin.com/in/muhammad-asim-764a8a273/';
+
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
 
-    const redirection = () => {
-        window.location.href = "https://www.linkedin.com/in/muhammad-asim-764a8a273/";
-    };
-    const redirectionGithub = () => {
-        window.location.href = "https://github.com/Muhammadasim225/MuhammadAsim";
-    };
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
-    // State to toggle the menu visibility
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+  useEffect(() => {
+    const sections = NAV_LINKS
+      .map((link) => document.getElementById(link.to))
+      .filter(Boolean);
 
-    // Toggle menu function
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
-    const aboutMePage=()=>{
-        setIsMenuOpen(false);
-    }
+    if (!sections.length) return undefined;
 
-    return (
-        <header className='headerTop w-full bg-white p-4 shadow-md sticky top-0 z-50'>
-            <nav className='navbar flex justify-between items-center lg:justify-between lg:items-center sm:justify-between sm:items-center'>
-                {/* Logo Section */}
-                <motion.div whileHover={{ scale: 1.05, rotate: "360deg" }} className="logo text-black font-extrabold text-2xl">
-                    PORT<span className='text-[#3C9189]'>FOLIO</span>
-                </motion.div>
-
-                {/* Hamburger Menu (shown on small screens) */}
-                <button className="text-2xl lg:hidden" onClick={toggleMenu}>
-                    <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} />
-                </button>
-
-                {/* Menu Links with Slide Animation for Small Screens */}
-                <AnimatePresence>
-                    {isMenuOpen && (
-                       <motion.ul
-                       className="flex flex-col lg:hidden items-center bg-white text-gray-400 font-bold text-md absolute top-16 left-0 w-full shadow-lg space-y-7 pb-5"
-                       initial={{ y: -100,h:-100, opacity: 0 }}  // Start position higher up
-                       animate={{ y: 0, h:0, opacity: 1 }}    // Animate down to its natural position
-                       exit={{ y: -100,h:-100, opacity: 0 }}     // Animate up and fade out on exit
-                       transition={{
-                         duration: 0.5,                    // Adjust duration for smoother animation
-                         ease: [0.4, 0.8, 0.7, 1]        // Use an ease-in-out cubic-bezier for smoothness
-                       }}
-                     >
-     
-                               {isMenuOpen && (
-    <li>
-        <Link 
-            to="aboutme" 
-            smooth={true} 
-            duration={700} 
-            className='hover:text-orange-500 cursor-pointer'
-            onClick={() => setIsMenuOpen(false)}  // Close menu on click
-        >
-            ABOUT ME
-        </Link>
-    </li>
-)}
-
-                            
-{isMenuOpen && (
-    <li>
-        <Link 
-            to="projects" 
-            smooth={true} 
-            duration={700} 
-            className='hover:text-orange-500 cursor-pointer'
-            onClick={() => setIsMenuOpen(false)}  // Close menu on click
-        >
-            PROJECTS
-        </Link>
-    </li>
-)}
-
-{isMenuOpen && (
-    <li>
-        <Link 
-            to="experience" 
-            smooth={true} 
-            duration={700} 
-            className='hover:text-orange-500 cursor-pointer'
-            onClick={() => setIsMenuOpen(false)}  // Close menu on click
-        >
-            EXPERIENCE
-        </Link>
-    </li>
-)}
-
-{isMenuOpen && (
-    <li>
-        <Link 
-            to="skills" 
-            smooth={true} 
-            duration={700} 
-            className='hover:text-orange-500 cursor-pointer'
-            onClick={() => setIsMenuOpen(false)}  // Close menu on click
-        >
-            SKILLS
-        </Link>
-    </li>
-)}
-
-{isMenuOpen && (
-    <li>
-        <Link 
-            to="services" 
-            smooth={true} 
-            duration={700} 
-            className='hover:text-orange-500 cursor-pointer'
-            onClick={() => setIsMenuOpen(false)}  // Close menu on click
-        >
-            SERVICES
-        </Link>
-    </li>
-)}
-
-{isMenuOpen && (
-    <li>
-        <Link 
-            to="contact" 
-            smooth={true} 
-            duration={700} 
-            className='hover:text-orange-500 cursor-pointer'
-            onClick={() => setIsMenuOpen(false)}  // Close menu on click
-        >
-            CONTACT
-        </Link>
-    </li>
-)}
-
-
-                            {/* Social Links for mobile inside the menu */}
-                            <li className="flex justify-center space-x-4 mt-4">
-                                <img src={github} onClick={redirectionGithub} alt="github" className='cursor-pointer w-6' />
-                                <img src={linkedin} onClick={redirection} alt="linkedin" className='cursor-pointer w-6' />
-                            </li>
-                        </motion.ul>
-                    )}
-                </AnimatePresence>
-
-                {/* Menu Links for Large Screens */}
-                <ul className="hidden lg:flex space-x-6 text-gray-400 font-bold text-md items-center">
-                    <li>
-                        <Link to="aboutme" smooth={true} duration={700} className='hover:text-orange-500 cursor-pointer'>
-                            ABOUT ME
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="projects" smooth={true} duration={700} className='hover:text-orange-500 cursor-pointer'>
-                            PROJECTS
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="experience" smooth={true} duration={700} className='hover:text-orange-500 cursor-pointer'>
-                            EXPERIENCE
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="skills" smooth={true} duration={700} className='hover:text-orange-500 cursor-pointer'>
-                            SKILLS
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="services" smooth={true} duration={700} className='hover:text-orange-500 cursor-pointer'>
-                            SERVICES
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="contact" smooth={true} duration={700} className='hover:text-orange-500 cursor-pointer'>
-                            CONTACT
-                        </Link>
-                    </li>
-                </ul>
-
-                {/* Social Links for larger screens outside the menu */}
-                <div className="hidden lg:flex items-center space-x-4 mr-2">
-                    <img src={github} alt="github" onClick={redirectionGithub} className='cursor-pointer w-6' />
-                    <img src={linkedin} onClick={redirection} alt="linkedin" className='cursor-pointer w-6' />
-                </div>
-            </nav>
-        </header>
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        if (visible[0]) setActiveSection(visible[0].target.id);
+      },
+      { rootMargin: '-35% 0px -55% 0px', threshold: [0, 0.25, 0.5, 0.75, 1] }
     );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
+
+  const closeMenu = () => setIsMenuOpen(false);
+
+  return (
+    <header
+      className={`fixed top-0 z-50 w-full border-b shadow-lg transition-[background-color,border-color,box-shadow,backdrop-filter] duration-300 ${
+        isScrolled
+          ? 'border-ink-border bg-ink/80 shadow-black/20 backdrop-blur-md'
+          : 'border-transparent bg-transparent shadow-transparent backdrop-blur-0'
+      }`}
+    >
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 lg:px-10">
+        <Link
+          to="home"
+          smooth
+          duration={600}
+          className="cursor-pointer font-mono text-lg font-semibold tracking-tight text-paper"
+        >
+          asim<span className="text-accent">.dev</span>
+        </Link>
+
+        <ul className="hidden items-center gap-8 lg:flex">
+          {NAV_LINKS.map((link) => (
+            <li key={link.to}>
+              <Link
+                to={link.to}
+                smooth
+                duration={600}
+                offset={-64}
+                className={`eyebrow cursor-pointer text-xs font-medium uppercase transition-colors ${
+                  activeSection === link.to ? 'text-accent' : 'text-gray-400 hover:text-paper'
+                }`}
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        <div className="hidden items-center gap-4 lg:flex">
+          <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-gray-400 transition-colors hover:text-paper">
+            <FontAwesomeIcon icon={faGithub} className="text-lg" />
+          </a>
+          <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-gray-400 transition-colors hover:text-paper">
+            <FontAwesomeIcon icon={faLinkedinIn} className="text-lg" />
+          </a>
+          <Link to="contact" smooth duration={600} offset={-64}>
+            <button className="flex items-center gap-2 rounded-full bg-accent px-5 py-2 text-xs font-semibold uppercase text-ink transition-transform hover:scale-105">
+              Let's Talk <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="text-[10px]" />
+            </button>
+          </Link>
+        </div>
+
+        <button
+          className="text-2xl text-paper lg:hidden"
+          onClick={() => setIsMenuOpen((prev) => !prev)}
+          aria-label="Toggle menu"
+        >
+          <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} />
+        </button>
+      </nav>
+
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            className="overflow-hidden border-t border-ink-border bg-ink lg:hidden"
+          >
+            <ul className="flex flex-col items-center gap-6 py-8">
+              {NAV_LINKS.map((link) => (
+                <li key={link.to}>
+                  <Link
+                    to={link.to}
+                    smooth
+                    duration={600}
+                    offset={-64}
+                    onClick={closeMenu}
+                    className={`eyebrow cursor-pointer text-sm font-medium uppercase ${
+                      activeSection === link.to ? 'text-accent' : 'text-gray-300'
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+              <li className="flex items-center gap-6 pt-2 text-xl text-gray-300">
+                <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                  <FontAwesomeIcon icon={faGithub} />
+                </a>
+                <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  <FontAwesomeIcon icon={faLinkedinIn} />
+                </a>
+              </li>
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
+  );
 };
 
 export default Header;

@@ -1,380 +1,95 @@
-import React, { useEffect } from 'react'
-import ecommerceSite from '../assets/videos/video_website.mp4'
-import botSite from '../assets/videos/video_bot.mp4'
-import plumaSite from '../assets/videos/pluma_video.mp4'
-import chatSite from '../assets/videos/chat_video.mp4'
-import ariesian_task2 from '../assets/videos/ariesian task-2.mp4'
-import imageGallery from '../assets/videos/ariesian task-1.mp4'
-import todovideo from '../assets/videos/todovideo.mp4'
-import first_taskVideo from '../assets/videos/first_taskvideo.mp4'
-import image from '../assets/images/image.png'
-import todopic from '../assets/images/todopic.jpg'
-import firsttasktravel from '../assets/images/firsttasktravel.jpg'
-import imageGalleryPic from '../assets/images/imageGalleryPic.jpg'
-import ecommercePic from '../assets/images/ecommercePic.jpg'
-import plumaPic from '../assets/images/plumaPic.jpg'
-import chatPic from '../assets/images/chatPic.png'
-import quotePic from '../assets/images/quotePic.jpg'
-import fypPic from '../assets/images/fypPic.jpg'
-import realStatePic from '../assets/images/realStatePic.jpg'
+import React from 'react';
+import { motion } from 'framer-motion';
+import { faMapLocationDot, faRobot } from '@fortawesome/free-solid-svg-icons';
 
+import botSite from '../assets/videos/video_bot.mp4';
+import chatSite from '../assets/videos/chat_video.mp4';
+import chatPic from '../assets/images/chatPic.png';
+import fypPic from '../assets/images/fypPic.jpg';
+import realStatePic from '../assets/images/realStatePic.jpg';
+import videoDownloaderPic from '../assets/images/video-downloader-project.png';
 
+import { staggerContainer, viewportOnce } from '../lib/motion';
+import Section from './Section';
+import ProjectCard from './ProjectCard';
 
-
-
-import { useRef } from 'react';
-import {motion} from "framer-motion"
+const PROJECTS = [
+  {
+    id: 'real-estate',
+    title: 'AI Real Estate Lead Manager',
+    description:
+      'An AI-powered system that automatically captures, qualifies, and follows up with property leads — replacing manual calling and spreadsheets with an assistant that talks to buyers 24/7 and routes only high-quality leads to agents.',
+    tags: ['FastAPI', 'React.js', 'Node.js', 'AI Automation'],
+    link: 'https://github.com/Muhammadasim225/RealEstate-AI-Lead-Manager',
+    media: { poster: realStatePic },
+  },
+  {
+    id: 'smart-location',
+    title: 'AI Smart Location & Lifestyle Advisor',
+    description:
+      'A location recommendation agent built with FastAPI and LangChain/LangGraph — combining OpenWeather, Geoapify, and OpenStreetMap data through a multi-step workflow (intent detection → lookup → recommendation) with PostgreSQL-based checkpointing.',
+    tags: ['Python', 'LangGraph', 'LangChain', 'PostgreSQL'],
+    media: { icon: faMapLocationDot, gradient: 'from-accent2 to-ink' },
+  },
+  {
+    id: 'video-downloader',
+    title: 'Video Downloader & Media Aggregation Platform',
+    description:
+      'A backend service to download and stream media from 15+ social platforms, with Playwright-based scraping pipelines for reels and videos, containerized with Docker and deployed to a production VPS.',
+    tags: ['FastAPI', 'PostgreSQL', 'Docker', 'Playwright'],
+    media: { poster: videoDownloaderPic },
+  },
+  {
+    id: 'chatbot',
+    title: 'AI-Powered Chatbot',
+    description:
+      'A secure full-stack chatbot integrating Hugging Face models, with JWT-authenticated sessions, rate limiting, and chat history — built on Next.js, Express, Supabase, and Prisma ORM.',
+    tags: ['Next.js', 'Express', 'Hugging Face', 'Supabase'],
+    link: 'https://github.com/Muhammadasim225/AI-Powered-Chatbot',
+    media: { video: botSite, icon: faRobot, gradient: 'from-slate-600 to-ink' },
+  },
+  {
+    id: 'fitvision',
+    title: 'FitVision — Smart Mirror (FYP)',
+    description:
+      'A Final Year Project delivering an AI-powered virtual try-on experience — computer vision and AR overlays on a smart mirror, with a Flutter companion app and a FastAPI + Firebase backend.',
+    tags: ['Computer Vision', 'FastAPI', 'Flutter', 'Firebase'],
+    link: 'https://github.com/fitvision032-bit/fitvision',
+    media: { poster: fypPic },
+  },
+  {
+    id: 'realtime-chat',
+    title: 'Real-Time Chat Application',
+    description:
+      'A full-stack real-time messaging platform with instant delivery over WebSockets, secure authentication, and a responsive chat UI built with the MERN stack and Socket.IO.',
+    tags: ['MERN', 'Socket.IO', 'WebSockets'],
+    link: 'https://github.com/Muhammadasim225/Real-TIme-Chat-App',
+    media: { poster: chatPic, video: chatSite },
+  },
+];
 
 const Projects = () => {
-
-
-  const kk=useRef();
-  const kale = {
-    hide: {
-      opacity: 0,
-      y:100
-
-    },
-    view:{
-      opacity: 1,
-      y:0,
-      transition: {
-        delay: 0,
-          duration: 2
-         
-              // Use a number, not a string
-      }
-    },
-  
-  
-  };
-  const projectsRef = useRef(null);
-  const scrollToSection = (refName) => {
-
-  if (refName === 'projectsRef' && projectsRef.current) {
-    projectsRef.current.scrollIntoView({ behavior: 'smooth' });
-  }
-}
-
-const ecommerceWeb=()=>{
-  window.location.href="https://github.com/Muhammadasim225/Ecommerce-App";
-}
-const imageGalleryApp=()=>{
-  window.location.href="https://github.com/Muhammadasim225/Ariesian-Tech/tree/main/Task-1/Image%20Gallery";
-}
-const calculator=()=>{
-  window.location.href="https://github.com/Muhammadasim225/Ariesian-Tech/tree/main";
-}
-const explorePak=()=>{
-  window.location.href="https://github.com/Muhammadasim225/Tasks-1";
-}
-const todoApp=()=>{
-  window.location.href="https://github.com/Muhammadasim225/TodoList_react";
-}
-const pluma=()=>{
-  window.location.href="https://github.com/Muhammadasim225/pluma-social-blog";
-}
-
-  const quoteClick=()=>{
-      window.location.href="https://github.com/Muhammadasim225/quote-app";
-
-  }
-    const chatBotClick=()=>{
-      window.location.href="https://github.com/Muhammadasim225/AI-Powered-Chatbot";
-
-  }
-
-   const realChta=()=>{
-      window.location.href="https://github.com/Muhammadasim225/Real-TIme-Chat-App";
-  }
-  const fypProject = () => {
-  window.location.href = "https://github.com/fitvision032-bit/fitvision"
-}
-  const realState = () => {
-  window.location.href = "https://github.com/Muhammadasim225/RealEstate-AI-Lead-Manager"
-}
-
-    
-  
   return (
-    <>
-        <motion.div id="projects" ref={projectsRef}  variants={kale} initial="hide" whileInView="view" viewport={{ once: true }} className="w-full lg:px-16 sm:px-16 md:px-0 md:pt-6 md:pb-0 px-6 pt-6 lg:pt-16 sm:pt-14 pb-14">
-        <div className="head flex flex-col items-center align-middle lg:space-y-3 sm:space-y-3 md:space-y-3 space-y-1 mb-6 ">
-        <h6 className=' text-orange-500 lg:text-lg text-sm sm:text-sm font-semibold'>My recent projects
-</h6>
-        <h1 className='font-extrabold text-black headline lg:text-6xl sm:text-4xl text-3xl '>Projects</h1> 
-        </div>
-
-        <div className="content flex flex-wrap gap-10 justify-center lg:my-20 sm:my-10 w-full">
-
-            <div className="card flex flex-col bg-white border border-orange-500 text-black w-full sm:w-11/12 lg:w-[47%] md:w-5/12 rounded-xl">
-  
-  {/* Image Container */}
-  <div className="video-container bg-black h-60 sm:mb-4 md:mb-4 lg:mb-4 mb-1 rounded-t-xl">
-    <video
-  alt="AI Real Estate Lead Manager"
-  className="w-full h-full object-cover rounded-xl text-white"
-  poster={realStatePic}
-  muted
->
-</video>
-  </div>
-
-  {/* Card Body */}
-   <div className="card-body flex flex-col flex-grow p-4
-              
-              sm:lg-6  md:lg-6 lg:pl-6 sm:pr-6 md:pr-6 lg:pr-6 sm:pb-2 md:pb-2 lg-pb-2 sm:pt-2 md:pt-2 lg:pt-2 pl-3 pr-3 pb-2 pt-2">
-    <h2 className="sm:text-2xl md:text-2xl lg:text-2xl sm:mb-3 md:mb-3 lg:mb-3 mb-1 font-custom font-bold text-orange-500 text-xl ">
-     AI Real Estate Lead Manager
-    </h2>
-
-    <p className="sm:mb-4 md:mb-4 lg:mb-4 mb-2 font-custom text-black text-md lg:text-md sm:text-md md:text-md">
-      An AI-powered system that helps real estate agencies automatically capture, qualify, and follow up with property leads. 
-It replaces manual calling and spreadsheets with smart AI that talks to clients, filters serious buyers, and sends only high-quality leads to agents.
-
-    </p>
-
-    <ul className="list-disc list-inside text-blue-400 text-md">
-      <li>Captures leads from website, ads, and chat</li>
-      <li>AI chats with buyers & sellers 24/7</li>
-      <li>Automatically qualifies hot vs cold leads</li>
-      <li>Sends follow-ups via WhatsApp, email & chat</li>
-      <li>Agent dashboard to manage all leads in one place</li>
-    </ul>
-
-    <div className="mt-auto flex justify-end">
-      <button onClick={realState} className="text-blue-400 flex items-center">
-        View <span className="ml-2">➔</span>
-      </button>
-    </div>
-  </div>
-</div>
-
-          
-
-        <div className="card flex flex-col bg-white border border-orange-500 text-black w-full sm:w-11/12 lg:w-[47%] md:w-5/12 rounded-xl">
-            <div className="video-container bg-black h-60 sm:mb-4 md:mb-4 lg:mb-4 mb-1 rounded-t-xl"  onMouseEnter={(e) => e.currentTarget.querySelector("video").play()}
-    onMouseLeave={(e) => e.currentTarget.querySelector("video").pause()}>
-              {/* Replace with <video> tag */}
-              <video className="w-full h-full object-cover rounded-xl text-white" src={botSite} muted></video>
-            </div>
-            <div className="card-body flex flex-col flex-grow p-4
-              
-              sm:lg-6  md:lg-6 lg:pl-6 sm:pr-6 md:pr-6 lg:pr-6 sm:pb-2 md:pb-2 lg-pb-2 sm:pt-2 md:pt-2 lg:pt-2 pl-3 pr-3 pb-2 pt-2">
-              <h2 className="sm:text-2xl md:text-2xl lg:text-2xl sm:mb-3 md:mb-3 lg:mb-3 mb-1 font-custom font-bold text-orange-500 text-xl ">AI-Powered Chatbot</h2>
-              <p className="sm:mb-4 md:mb-4 lg:mb-4 mb-2 font-custom text-black text-md lg:text-md sm:text-md md:text-md">
-A secure, full-stack chatbot application integrating Hugging Face models with a production-ready setup. Built with Next.js, Express, Supabase, and Prisma ORM to ensure scalability and security.
-              </p>
-              <ul className="list-disc list-inside text-blue-400 text-md">
-                <li>AI responses powered by Hugging Face Transformers</li>
-                <li>Secure signup/login with JWT & cookies</li>
-                <li>Rate limiting & protected routes for abuse prevention</li>
-                <li>Chat history & user data stored with Supabase + Prisma</li>
-                <li>RESTful APIs with Express.js backend</li>
-              </ul>
-              <div className="mt-auto flex justify-end">
-                <button onClick={chatBotClick} className="text-blue-400 flex items-center">
-                  View <span className="ml-2">➔</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-        <div className="card flex flex-col bg-white border border-orange-500 text-black w-full sm:w-11/12 lg:w-[47%] md:w-5/12 rounded-xl">
-  
-  {/* Image Container */}
-  <div className="video-container bg-black h-60 sm:mb-4 md:mb-4 lg:mb-4 mb-1 rounded-t-xl">
-   <video
-  alt="FitVision Smart Mirror"
-  className="w-full h-full object-cover rounded-xl text-white"
-  poster={fypPic}
-  muted
->
-</video>
-  </div>
-
-  {/* Card Body */}
-   <div className="card-body flex flex-col flex-grow p-4
-              
-              sm:lg-6  md:lg-6 lg:pl-6 sm:pr-6 md:pr-6 lg:pr-6 sm:pb-2 md:pb-2 lg-pb-2 sm:pt-2 md:pt-2 lg:pt-2 pl-3 pr-3 pb-2 pt-2">
-    <h2 className="sm:text-2xl md:text-2xl lg:text-2xl sm:mb-3 md:mb-3 lg:mb-3 mb-1 font-custom font-bold text-orange-500 text-xl ">
-      FitVision – Smart Mirror (FYP)
-    </h2>
-
-    <p className="sm:mb-4 md:mb-4 lg:mb-4 mb-2 font-custom text-black text-md lg:text-md sm:text-md md:text-md">
-      A Final Year Project focused on an AI-powered Smart Mirror experience for
-      virtual clothing try-on. The system integrates computer vision, AR overlays,
-      real-time notification, community sharing, and a scalable full-stack architecture.
-    </p>
-
-    <ul className="list-disc list-inside text-blue-400 text-md">
-      <li>AI-based virtual try-on using Computer Vision</li>
-      <li>Real-time camera & AR clothing overlays</li>
-      <li>Flutter mobile app</li>
-      <li>FastAPI backend with Firebase</li>
-      <li>Admin dashboard for product & model management</li>
-    </ul>
-
-    <div className="mt-auto flex justify-end">
-      <button onClick={fypProject} className="text-blue-400 flex items-center">
-        View <span className="ml-2">➔</span>
-      </button>
-    </div>
-  </div>
-</div>
-
-
-          
-        <div className="card flex flex-col bg-white border border-orange-500 text-black w-full sm:w-11/12 lg:w-[47%] md:w-5/12 rounded-xl ">
-            <div className="video-container bg-black h-60 sm:mb-4 md:mb-4 lg:mb-4 mb-1 rounded-t-xl"  onMouseEnter={(e) => e.currentTarget.querySelector("video").play()}
-    onMouseLeave={(e) => e.currentTarget.querySelector("video").pause()}>
-              {/* Replace with <video> tag */}
-              <video className="w-full h-full object-cover rounded-xl text-white" src={ecommerceSite} poster={ecommercePic} muted></video>
-            </div>
-            <div className="card-body flex flex-col flex-grow p-4 sm:lg-6  md:lg-6 lg:pl-6 sm:pr-6 md:pr-6 lg:pr-6 sm:pb-2 md:pb-2 lg-pb-2 sm:pt-2 md:pt-2 lg:pt-2 pl-3 pr-3 pb-2 pt-2">
-              <h2 className="sm:text-2xl md:text-2xl lg:text-2xl sm:mb-3 md:mb-3 lg:mb-3 mb-1 font-custom font-bold text-orange-500 text-xl ">Ecommerce Platform</h2>
-              <p className="sm:mb-4 md:mb-4 lg:mb-4 mb-2 font-custom text-black text-md lg:text-md sm:text-md md:text-md">
-              A full-stack eCommerce platform built using the MERN stack. It includes a functional user authentication system, product browsing, shopping cart ,add to cart functionality, add to favorites and checkout.
-              </p>
-              <ul className="list-disc list-inside text-blue-400 text-md">
-                <li>User authentication with secure login and registration</li>
-                <li>Browse and view detailed product information</li>
-                <li>Fully functional shopping cart and checkout process</li>
-                <li>Smooth UI animations with Framer Motion</li>
-              </ul>
-              <div className="mt-auto flex justify-end">
-                <button onClick={ecommerceWeb} className="text-blue-400 flex items-center">
-                  View <span className="ml-2">➔</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-
-          <div className="card flex flex-col bg-white border border-orange-500 text-black w-full sm:w-11/12 lg:w-[47%] md:w-5/12 rounded-xl ">
-            <div className="video-container bg-black h-60 sm:mb-4 md:mb-4 lg:mb-4 mb-1 rounded-t-xl"  onMouseEnter={(e) => e.currentTarget.querySelector("video").play()}
-    onMouseLeave={(e) => e.currentTarget.querySelector("video").pause()}>
-              {/* Replace with <video> tag */}
-              <video className="w-full h-full object-cover rounded-xl text-white" src={plumaSite} poster={plumaPic} muted></video>
-            </div>
-            <div className="card-body flex flex-col flex-grow p-4 sm:lg-6  md:lg-6 lg:pl-6 sm:pr-6 md:pr-6 lg:pr-6 sm:pb-2 md:pb-2 lg-pb-2 sm:pt-2 md:pt-2 lg:pt-2 pl-3 pr-3 pb-2 pt-2">
-              <h2 className="sm:text-2xl md:text-2xl lg:text-2xl sm:mb-3 md:mb-3 lg:mb-3 mb-1 font-custom font-bold text-orange-500 text-xl ">Pluma – Social Blogging Platform</h2>
-              <p className="sm:mb-4 md:mb-4 lg:mb-4 mb-2 font-custom text-black text-md lg:text-md sm:text-md md:text-md">
-A modern, full-stack social blogging platform built with Next.js, GraphQL, PostgreSQL, and Prisma. Designed for creators and readers, it offers rich content creation, social engagement, and a scalable architecture.A modern, full-stack social blogging platform built with Next.js, GraphQL, PostgreSQL, and Prisma. Designed for creators and readers, it offers rich content creation, social engagement, and a scalable architecture.
-              </p>
-              <ul className="list-disc list-inside text-blue-400 text-md">
-                <li>Secure authentication with OAuth & Passport</li>
-                <li>Create, edit, and publish blog posts with images & tags</li>
-                <li>Engage with likes, comments, and follows</li>
-                <li>Advanced search by title, tags, or author</li>
-                <li>Dockerized setup & CI/CD with GitHub Actions</li>
-              </ul>
-              <div className="mt-auto flex justify-end">
-                <button onClick={pluma} className="text-blue-400 flex items-center">
-                  View <span className="ml-2">➔</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-           <div className="card flex flex-col bg-white border border-orange-500 text-black w-full sm:w-11/12 lg:w-[47%] md:w-5/12 rounded-xl ">
-            <div className="video-container bg-black h-60 sm:mb-4 md:mb-4 lg:mb-4 mb-1 rounded-t-xl"  onMouseEnter={(e) => e.currentTarget.querySelector("video").play()}
-    onMouseLeave={(e) => e.currentTarget.querySelector("video").pause()}>
-              {/* Replace with <video> tag */}
-              <video className="w-full h-full object-cover rounded-xl text-white" src={chatSite} poster={chatPic} muted></video>
-            </div>
-            <div className="card-body flex flex-col flex-grow p-4 sm:lg-6  md:lg-6 lg:pl-6 sm:pr-6 md:pr-6 lg:pr-6 sm:pb-2 md:pb-2 lg-pb-2 sm:pt-2 md:pt-2 lg:pt-2 pl-3 pr-3 pb-2 pt-2">
-              <h2 className="sm:text-2xl md:text-2xl lg:text-2xl sm:mb-3 md:mb-3 lg:mb-3 mb-1 font-custom font-bold text-orange-500 text-xl ">Real-Time Chat Application</h2>
-              <p className="sm:mb-4 md:mb-4 lg:mb-4 mb-2 font-custom text-black text-md lg:text-md sm:text-md md:text-md">
-A full-stack real-time chat platform built with React, Node.js, Express, MongoDB, and Socket.IO. It supports instant communication, user authentication, and modern chat features for an interactive experience.
-              </p>
-              <ul className="list-disc list-inside text-blue-400 text-md">
-                <li>Real-time messaging powered by WebSockets (Socket.IO)</li>
-                <li>Secure user authentication & session handling</li>
-                <li>Emoji support & rich text messaging</li>
-                <li>Responsive UI with smooth chat interface</li>
-                <li>Instant updates for new messages and online users</li>
-              </ul>
-              <div className="mt-auto flex justify-end">
-                <button onClick={realChta} className="text-blue-400 flex items-center">
-                  View <span className="ml-2">➔</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-
-             <div className="card flex flex-col bg-white border border-orange-500 text-black w-full sm:w-11/12 lg:w-[47%] md:w-5/12 rounded-xl ">
-            <div className="video-container bg-black h-60 sm:mb-4 md:mb-4 lg:mb-4 mb-1 rounded-t-xl"  onMouseEnter={(e) => e.currentTarget.querySelector("video").play()}
-    onMouseLeave={(e) => e.currentTarget.querySelector("video").pause()}>
-              {/* Replace with <video> tag */}
-              <video className="w-full h-full object-cover rounded-xl text-white" poster={quotePic} muted></video>
-            </div>
-            <div className="card-body flex flex-col flex-grow p-4 sm:lg-6  md:lg-6 lg:pl-6 sm:pr-6 md:pr-6 lg:pr-6 sm:pb-2 md:pb-2 lg-pb-2 sm:pt-2 md:pt-2 lg:pt-2 pl-3 pr-3 pb-2 pt-2">
-              <h2 className="sm:text-2xl md:text-2xl lg:text-2xl sm:mb-3 md:mb-3 lg:mb-3 mb-1 font-custom font-bold text-orange-500 text-xl ">Quote Application</h2>
-              <p className="sm:mb-4 md:mb-4 lg:mb-4 mb-2 font-custom text-black text-md lg:text-md sm:text-md md:text-md">
-A modern full-stack Quote App built with React, Apollo Client, GraphQL, and MongoDB, designed for secure and engaging content sharing.              </p>
-              <ul className="list-disc list-inside text-blue-400 text-md">
-                <li>User authentication with JWT (signup/login)</li>
-                <li>Create, update, and delete personal quotes</li>
-                <li>View personal and other users’ profiles</li>
-                <li>Responsive design with Materialize CSS</li>
-                <li>Apollo Client cache for efficient state management</li>
-              </ul>
-              <div className="mt-auto flex justify-end">
-                <button onClick={quoteClick} className="text-blue-400 flex items-center">
-                  View <span className="ml-2">➔</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-
-          
-          <div ref={kk} className=  "card flex flex-col bg-white border border-orange-500 text-black w-full sm:w-11/12 lg:w-[47%] md:w-5/12 rounded-xl grp ">
-            <div className="video-container h-60 sm:mb-4 md:mb-4 lg:mb-4 mb-1 rounded-t-xl"   onMouseEnter={(e) => e.currentTarget.querySelector("video").play()}
-    onMouseLeave={(e) => e.currentTarget.querySelector("video").pause()}>
-              {/* Replace with <video> tag */}
-              <video className="w-full h-full object-cover rounded-xl text-white" src={first_taskVideo} poster={firsttasktravel} muted ></video>
-            </div>
-            <div className="card-body flex flex-col flex-grow p-4 sm:lg-6  md:lg-6 lg:pl-6 sm:pr-6 md:pr-6 lg:pr-6 sm:pb-2 md:pb-2 lg-pb-2 sm:pt-2 md:pt-2 lg:pt-2 pl-3 pr-3 pb-2 pt-2">
-              <h2 className="sm:text-2xl md:text-2xl lg:text-2xl sm:mb-3 md:mb-3 lg:mb-3 mb-1 font-custom font-bold text-orange-500 text-xl ">ExplorePak Website</h2>
-              <p className="sm:mb-4 md:mb-4 lg:mb-4 mb-2 font-custom text-black text-md lg:text-md sm:text-md md:text-md">
-              A fully responsive travel website showcasing the beauty of Pakistan. It includes engaging layouts, travel packages, a gallery, and social media integration for easy exploration.
-              </p>
-              <ul className="list-disc list-inside text-blue-400 text-md">
-                <li>Responsive design using HTML, CSS, and JavaScript.
-                </li>
-                <li>Gallery with interactive image sliders.
-
-                </li>
-                <li>Travel packages section with pricing and ratings.
-
-                </li>
-                <li>Social media integration with icons and links.
-
-                </li>
-                <li>FAQ section for common queries and travel tips.
-                </li>
-              </ul>
-              <div className="mt-auto flex justify-end">
-                <button onClick={explorePak} className="text-blue-400 flex items-center">
-                  View <span className="ml-2" >➔</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-
-
-
-
-
-        </div>
+    <Section
+      id="projects"
+      tone="light"
+      eyebrow="Selected Work"
+      title="Projects"
+      subtitle="A curated set of projects spanning AI automation, backend systems, and full-stack products — each one shipped end to end."
+    >
+      <motion.div
+        variants={staggerContainer(0.1)}
+        initial="hidden"
+        whileInView="show"
+        viewport={viewportOnce}
+        className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3"
+      >
+        {PROJECTS.map((project) => (
+          <ProjectCard key={project.id} project={project} />
+        ))}
       </motion.div>
-    </>
-      
-  )
-}
+    </Section>
+  );
+};
 
-export default Projects
+export default Projects;

@@ -1,150 +1,118 @@
 import React from 'react'
-import Header from './Header'
-import blurry from "../assets/images/ppf.png"
-import AboutMe from './AboutMe'
-import { motion ,AnimatePresence, easeInOut} from "framer-motion"
-import { useRef } from 'react'
-import cv from "../assets/public/cvvv.pdf"
-import { Link } from "react-scroll"
+import { motion } from 'framer-motion'
+import { Link } from 'react-scroll'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowDown, faDownload } from '@fortawesome/free-solid-svg-icons'
+import heroImage from '../assets/images/ppf.png'
+import cv from '../assets/public/Muhammad_Asim_CV.pdf'
+import { fadeUp, staggerContainer } from '../lib/motion'
+
+const STATS = [
+  { value: '2+', label: 'Years Building Software' },
+  { value: '10+', label: 'Projects Shipped' },
+  { value: '4', label: 'Teams Collaborated With' },
+]
+
 const Homepage = () => {
-const vari = {
-  initial: {
-    x: -100,
-    opacity: 0,
-  },
-  anima: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 1,
-      ease: "easeInOut",
-    }
-  }
-};
-
-  const container = {
-    animate: {
-      transition: {
-        staggerChildren:1.5, // Adds delay between card animations
-      },
-    },
-  };
-
-
-
-
-  const bacha={
-
-    hido:{
-      opacity:0,
-    },
-
-    whiloo:{
-      opacity:1,
-    }
-  }
-
- 
-  
-  
   return (
-    <>
-      <Header />
-    
-     <div 
-  className="mt-8 flex flex-col-reverse items-start px-6 pt-8 pb-8
-             lg:mt-10 lg:flex-row lg:items-center lg:justify-between lg:px-16 lg:pt-16 lg:pb-10"
->
-  {/* Left Text Section */}
-  <motion.div  
-    variants={container} 
-    animate="animate"  
-    className="lg:pb-5 md:pb-5 xl:pb-5 sm:pb-5 pb-0 2xl:pb-5 flex flex-col space-y-1 lg:space-y-3 md:space-y-2 sm:space-y-2  xl:space-y-3 2xl:space-y-3 text-black w-full lg:w-3/5"
-  >
-    <motion.h1 
-      variants={vari} initial="initial" animate="anima"  
-      className='text-left text-2xl sm:text-4xl md:text-5xl  font-extrabold lg:text-5xl lg:text-left'
+    <section
+      id="home"
+      className="relative w-full overflow-hidden bg-ink pb-16 pt-32 sm:pb-20 sm:pt-40 lg:pb-28 lg:pt-44"
     >
-      Hi, I Am Muhammad Asim,
-    </motion.h1>
+      {/* Ambient background accents */}
+      <div className="pointer-events-none absolute -top-32 right-0 h-96 w-96 rounded-full bg-accent/20 blur-[120px]" />
+      <div className="pointer-events-none absolute bottom-0 left-0 h-72 w-72 rounded-full bg-accent2/20 blur-[110px]" />
 
-    <motion.h1 
-      variants={vari} initial="initial" animate="anima" 
-      className='text-left text-2xl sm:text-4xl md:text-5xl font-extrabold text-orange-500 lg:text-5xl lg:text-left'
-    >
-      Full Stack Engineer.
-    </motion.h1>
-<motion.p
-  variants={vari}
-  initial="initial"
-  animate="anima"
-  className="pt-3 sm:pt-6 md:pt-8 lg:pt-8 xl:pt-8 
-             text-left text-gray-800 leading-relaxed 
-             text-sm sm:text-lg md:text-lg lg:text-md xl:text-md 2xl:text-[1.4rem]"
->
- I build scalable web applications with a backend-first approach.
-Currently working with modern stacks and AI-powered systems,
-focusing on performance, automation, and real-world impact.
-</motion.p>
+      <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-12 px-6 sm:px-10 lg:flex-row lg:items-center lg:justify-between lg:gap-10 lg:px-16">
+        {/* Left: Text */}
+        <motion.div
+          variants={staggerContainer(0.12)}
+          initial="hidden"
+          animate="show"
+          className="flex w-full flex-col items-start gap-5 text-left lg:w-3/5"
+        >
+          <motion.span
+            variants={fadeUp}
+            className="eyebrow rounded-full border border-ink-border bg-white/5 px-4 py-1.5 text-xs font-medium uppercase text-accent"
+          >
+            Available for new opportunities
+          </motion.span>
 
+          <motion.h1 variants={fadeUp} className="headline text-4xl text-paper sm:text-5xl md:text-6xl">
+            Hi, I&apos;m Muhammad Asim.
+          </motion.h1>
 
-    {/* Buttons */}
-  {/* Buttons */}
-<motion.div
-  variants={vari}
-  initial="initial"
-  animate="anima"
-  className="flex flex-col space-y-3 pt-6 
-             sm:flex-row sm:space-y-0 sm:space-x-4 sm:items-center w-full
-             justify-center lg:justify-start"
->
-  {/* DOWNLOAD CV Button */}
-  <a href={cv} download="Muhammad_Asim_CV.pdf" className="w-full sm:w-auto">
-    <button
-      className="w-full sm:w-auto border border-orange-500 text-orange-500 
-                 px-4 py-2 text-xs font-semibold rounded-md 
-                 hover:bg-orange-500 hover:text-white transition 
-                 md:px-6 md:py-2.5 md:text-sm 
-                 lg:px-7 lg:py-3 lg:text-base 
-                 xl:px-8 xl:py-3 xl:text-base 
-                 2xl:px-9 2xl:py-3.5 2xl:text-lg"
-    >
-      DOWNLOAD CV
-    </button>
-  </a>
+          <motion.h2 variants={fadeUp} className="headline text-2xl text-accent sm:text-3xl md:text-4xl">
+            Full Stack Engineer — Backend &amp; AI Automation
+          </motion.h2>
 
-  {/* CONTACT INFO Button */}
-  <Link to="contact" smooth={true} duration={700} className="w-full sm:w-auto">
-    <motion.button
-      whileTap={{ scale: 1.05, ease: "easeInOut" }}
-      transition={{ duration: 0.01 }}
-      className="w-full sm:w-auto bg-[#3C9189] text-white 
-                 px-4 py-2 text-xs font-semibold rounded-md 
-                 hover:opacity-90 transition 
-                 md:px-6 md:py-2.5 md:text-sm 
-                 lg:px-7 lg:py-3 lg:text-base 
-                 xl:px-8 xl:py-3 xl:text-base 
-                 2xl:px-9 2xl:py-3.5 2xl:text-lg"
-    >
-      CONTACT INFO
-    </motion.button>
-  </Link>
-</motion.div>
+          <motion.p variants={fadeUp} className="max-w-xl text-sm leading-relaxed text-gray-400 sm:text-base">
+            I design and ship scalable REST APIs with Python/FastAPI and the MERN stack, and build
+            AI-powered automation with LangChain, LangGraph, and n8n — turning complex ideas into
+            fast, production-ready systems.
+          </motion.p>
 
+          <motion.div variants={fadeUp} className="flex w-full flex-col gap-3 pt-2 sm:w-auto sm:flex-row">
+            <a href={cv} download="Muhammad_Asim_CV.pdf" className="w-full sm:w-auto">
+              <button className="flex w-full items-center justify-center gap-2 rounded-lg border border-accent px-6 py-3 text-sm font-semibold text-accent transition-colors hover:bg-accent hover:text-ink sm:w-auto">
+                <FontAwesomeIcon icon={faDownload} className="text-xs" />
+                Download CV
+              </button>
+            </a>
+            <Link to="contact" smooth duration={600} offset={-64} className="w-full sm:w-auto">
+              <button className="w-full rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-ink transition-transform hover:scale-[1.03] sm:w-auto">
+                Let&apos;s Talk
+              </button>
+            </Link>
+          </motion.div>
 
+          <motion.div
+            variants={fadeUp}
+            className="grid w-full grid-cols-3 gap-4 border-t border-ink-border pt-6 sm:max-w-md"
+          >
+            {STATS.map((stat) => (
+              <div key={stat.label}>
+                <p className="headline text-2xl text-paper sm:text-3xl">{stat.value}</p>
+                <p className="mt-1 text-[11px] uppercase tracking-wide text-gray-500 sm:text-xs">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </motion.div>
+        </motion.div>
 
-  </motion.div>
+        {/* Right: Portrait */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.92 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="relative w-2/3 sm:w-1/2 lg:w-2/5"
+        >
+          <div className="absolute inset-0 -z-10 scale-95 rounded-[2rem] bg-gradient-to-br from-accent/40 via-accent2/30 to-transparent blur-2xl" />
+          <div className="overflow-hidden rounded-[2rem] border border-ink-border bg-white/5">
+            <img
+              src={heroImage}
+              alt="Muhammad Asim"
+              className="h-full w-full object-cover"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
+        </motion.div>
+      </div>
 
-  {/* Right Image */}
-  <motion.img 
-    src={blurry} alt="pic" 
-    className='w-3/4 mx-auto mb-8 lg:mb-6 sm:mb-6 md:mb-6 lg:mb-6 xl:mb-6 2xl:mb-6 lg:w-1/3 lg:mb-0
-               grayscale hover:grayscale-0 hover:scale-105 transition duration-300'
-  />
-</div>
-
-    </>
+      <Link
+        to="aboutme"
+        smooth
+        duration={600}
+        offset={-64}
+        className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 cursor-pointer flex-col items-center gap-2 text-gray-500 sm:flex"
+      >
+        <span className="eyebrow text-[10px] uppercase">Scroll</span>
+        <FontAwesomeIcon icon={faArrowDown} className="animate-bounce text-xs" />
+      </Link>
+    </section>
   )
 }
 
-export default Homepage;
+export default Homepage

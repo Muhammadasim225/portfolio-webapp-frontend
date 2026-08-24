@@ -1,155 +1,129 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import logAl from "../assets/images/LogoAL.png";
-import ariesian from "../assets/images/ariesian.jpg";
+import octaoopLogo from "../assets/images/octaoop-logo.jpg";
+import { fadeUp, staggerContainer, viewportOnce } from "../lib/motion";
+import Section from "./Section";
 
 const experiences = [
   {
-  id: 1,
-  title: "Junior Full Stack Developer",
-  company: "FunPrime Technology",
-  date: "January 2026 - Present",
-  logo: "https://www.funprimetechnology.com/images/logo.png", // baad me real logo laga dena
-  description: `Working as a backend-focused Full Stack Developer on production-level web applications.
-
-Developing and maintaining high-performance REST APIs using Python and FastAPI.
-Building backend services, business logic, and secure API workflows.
-Creating frontend components using JavaScript and ReactJS where required.
-Implementing Docker-based containerization for consistent development and deployment.
-Writing and maintaining automated tests using Playwright.
-Working on web scraping scripts for structured data extraction.
-Setting up and maintaining CI/CD pipelines for automated builds and deployments.
-Using Linux commands and server environments for debugging, deployment, and optimization.`,
-  technologies: "Python, FastAPI, ReactJS, JavaScript, Docker, Playwright, Web Scraping, CI/CD, Linux",
-  learning: "→ Gaining strong hands-on experience in backend engineering, DevOps practices, and production-grade system development."
-},
-
+    id: 1,
+    title: "Junior Full Stack Developer",
+    company: "FunPrime Technology",
+    date: "January 2026 - Present",
+    logo: "https://www.funprimetechnology.com/images/logo.png",
+    description: `Own backend-focused feature development for production web applications, designing and shipping scalable REST APIs with Python and FastAPI.
+Containerize services with Docker and manage CI/CD pipelines to streamline deployment and reduce release friction.
+Build and maintain web scraping and data extraction pipelines, and implement automated testing with Playwright.
+Collaborate directly with React.js frontend teams in a Linux production environment to deliver end-to-end features.`,
+    technologies: "Python, FastAPI, ReactJS, Docker, Playwright, CI/CD, Linux",
+  },
   {
     id: 2,
+    title: "Software Engineer",
+    company: "OCTAOOP Digital Agency",
+    date: "January 2025 - December 2025",
+    logo: octaoopLogo,
+    description: `Built and deployed multiple blogging websites end to end, from backend architecture to production hosting.
+Designed AI automation workflows using n8n and LangChain for lead management and business process automation.
+Integrated multiple 3rd-party APIs and webhooks to connect internal systems with external services.
+Developed backend services using Python, FastAPI, and Node.js, containerized with Docker.`,
+    technologies: "Python, FastAPI, Node.js, n8n, LangChain, Docker",
+  },
+  {
+    id: 3,
     title: "MERN Stack Intern (Remote)",
     company: "10Pearls",
     date: "September 2025 - November 2025",
     logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsTe4Lhl5x_oMPMYpfIiIBIywiN98MedMw0A&s",
-    description: `Selected as a Shine Intern (Cohort 6) focused on full-stack development under mentorship.
-Built a Notes App featuring authentication, CRUD, and a rich-text editor.
-Implemented logging (Pino), testing (Mocha/Chai, Jest), and database integration (MongoDB + MySQL).
-Maintained code quality with SonarQube and version control via Git/GitHub.`,
-    technologies: "React, Node.js, MongoDB, MySQL, Jest, Mocha, Pino, Git, SonarQube",
-    learning: "→ Strengthened scalable app development, clean coding, and testing practices under mentor guidance."
+    description: `Delivered a production-level Notes application with full CRUD functionality using the MERN stack.
+Implemented structured logging with Pino and unit testing with Mocha/Chai and Jest.
+Maintained code quality through Git pull requests and SonarQube checks, following industry best practices.`,
+    technologies: "React, Node.js, MongoDB, MySQL, Jest, Mocha, Pino, SonarQube",
   },
   {
-    id: 3,
+    id: 4,
     title: "Web Developer Intern (Remote)",
     company: "Appium Logics Solutions",
     date: "June 2024 - October 2024",
     logo: logAl,
-    description: `Contributed to both front-end and back-end web projects using HTML, CSS, JavaScript, Bootstrap, PHP, and Firebase.
-Designed responsive user interfaces and integrated database connectivity.
-Collaborated in a small remote team to enhance web functionality and optimize UX.`,
+    description: `Contributed to full stack web development using HTML, CSS, JavaScript, Bootstrap, PHP, and Firebase.
+Designed responsive interfaces and collaborated with a remote team to optimize user experience.`,
     technologies: "HTML, CSS, JavaScript, Bootstrap, PHP, Firebase",
-    learning: "→ Strengthened my understanding of full-stack workflows and user-centered web design."
-  },
-  {
-    id: 4,
-    title: "Front-End Developer Intern (Remote)",
-    company: "Ariesian Tech",
-    date: "September 2024 - October 2024",
-    logo: ariesian,
-    description: `Worked on front-end development tasks in a collaborative environment.
-Developed responsive web pages using HTML, CSS, JavaScript, and ReactJS.
-Improved UI consistency and accessibility for ongoing projects under mentor guidance.`,
-    technologies: "ReactJS, HTML, CSS, JavaScript",
-    learning: "→ Enhanced UI/UX design approach and teamwork skills through real project collaboration."
   },
 ];
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 60 },
-  visible: (i) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: i * 0.25,
-      duration: 0.9,
-      type: "spring",
-      stiffness: 70,
-      damping: 14,
-    },
-  }),
+const initials = (name) =>
+  name
+    .split(" ")
+    .map((word) => word[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+
+const CompanyLogo = ({ src, company }) => {
+  const [failed, setFailed] = useState(false);
+
+  if (failed || !src) {
+    return (
+      <div className="flex h-16 w-16 items-center justify-center rounded-full border-2 border-accent/30 bg-white/5 font-mono text-sm font-semibold text-accent sm:h-20 sm:w-20">
+        {initials(company)}
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={src}
+      alt={company}
+      onError={() => setFailed(true)}
+      loading="lazy"
+      decoding="async"
+      className="h-16 w-16 rounded-full border-2 border-accent/30 object-cover sm:h-20 sm:w-20"
+    />
+  );
 };
 
 const Experience = () => {
   return (
-    <motion.section
+    <Section
       id="experience"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-      className="w-full bg-[#0f0f0f] text-white py-16 px-4 sm:px-6 md:px-12 lg:px-16 overflow-hidden"
+      tone="dark"
+      eyebrow="Career Path"
+      title="Work Experience"
+      subtitle="A timeline of hands-on experience across backend engineering, AI automation, and full-stack development."
     >
-      {/* Heading */}
       <motion.div
-        variants={{
-          hidden: { opacity: 0, y: 60 },
-          visible: {
-            opacity: 1,
-            y: 0,
-            transition: { duration: 1, type: 'spring', stiffness: 60 },
-          },
-        }}
-        className="text-center mb-12"
+        variants={staggerContainer(0.12)}
+        initial="hidden"
+        whileInView="show"
+        viewport={viewportOnce}
+        className="flex flex-col gap-6"
       >
-        <h2 className="text-3xl sm:text-4xl lg:text-6xl headline font-extrabold">
-          Work <span className="text-orange-500">Experience</span>
-        </h2>
-        <p className="text-gray-400 mt-5 text-sm sm:text-base max-w-2xl mx-auto">
-          A timeline of my hands-on experience in full-stack and front-end web development,
-          shaped through real-world mentorship, teamwork, and professional learning.
-        </p>
-      </motion.div>
-
-      {/* Experience Cards */}
-      <div className="flex flex-col gap-10 max-w-6xl mx-auto">
-        {experiences.map((exp, i) => (
+        {experiences.map((exp) => (
           <motion.div
             key={exp.id}
-            custom={i}
             variants={fadeUp}
-            className="flex flex-col sm:flex-row items-start sm:items-center gap-6 bg-[#1b1b1b] p-6 sm:p-8 rounded-2xl shadow-lg transition-transform duration-500 hover:scale-[1.03]  border border-transparent hover:border-orange-500/30"
+            className="flex flex-col items-start gap-6 rounded-2xl border border-transparent bg-ink-soft p-6 shadow-lg transition-colors duration-300 hover:border-accent/30 sm:flex-row sm:items-center sm:p-8"
           >
-            {/* Logo */}
-            <motion.div
-              whileHover={{ rotate: 5, scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 120, damping: 8 }}
-              className="flex-shrink-0"
-            >
-              <img
-                src={exp.logo}
-                alt={exp.company}
-                className="w-16 h-16 sm:w-20 sm:h-20 object-cover rounded-full border-4 border-[#4d5c8f]"
-              />
-            </motion.div>
+            <CompanyLogo src={exp.logo} company={exp.company} />
 
-            {/* Content */}
             <div className="flex-1">
-              <h3 className="text-xl sm:text-2xl font-bold text-white mb-1">{exp.title}</h3>
-              <p className="text-orange-500 text-sm sm:text-base mb-3 font-medium">
+              <h3 className="text-xl font-bold text-paper sm:text-2xl">{exp.title}</h3>
+              <p className="mb-3 text-sm font-medium text-accent sm:text-base">
                 {exp.company} · {exp.date}
               </p>
-              <p className="text-gray-400 text-sm sm:text-base leading-relaxed whitespace-pre-line">
+              <p className="whitespace-pre-line text-sm leading-relaxed text-gray-400 sm:text-base">
                 {exp.description}
               </p>
-              <p className="text-gray-300 text-sm sm:text-base mt-3">
-                <strong>Technologies Used:</strong> {exp.technologies}
-              </p>
-              <p className="italic text-gray-500 text-xs sm:text-sm mt-2">
-                {exp.learning}
+              <p className="mt-3 text-sm text-gray-300">
+                <strong className="text-gray-200">Technologies:</strong> {exp.technologies}
               </p>
             </div>
           </motion.div>
         ))}
-      </div>
-    </motion.section>
+      </motion.div>
+    </Section>
   );
 };
 

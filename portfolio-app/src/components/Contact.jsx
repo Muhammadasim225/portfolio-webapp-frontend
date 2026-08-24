@@ -1,210 +1,182 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPhone, faPlane,faArrowTurnDown} from '@fortawesome/free-solid-svg-icons';
-import { faLinkedinIn,faInstagram, faFacebookF} from '@fortawesome/free-brands-svg-icons';  // Import LinkedIn icon
+import { faPhone, faPaperPlane, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faLinkedinIn, faInstagram, faFacebookF } from '@fortawesome/free-brands-svg-icons';
 import { motion } from 'framer-motion';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
+import { fadeUp, viewportOnce } from '../lib/motion';
+import Section from './Section';
+
+const SOCIALS = [
+  { icon: faLinkedinIn, url: 'https://www.linkedin.com/in/muhammad-asim-764a8a273/', label: 'LinkedIn' },
+  { icon: faInstagram, url: 'https://www.instagram.com/muhammadasim4927/', label: 'Instagram' },
+  { icon: faFacebookF, url: 'https://www.facebook.com/profile.php?id=100007728857565', label: 'Facebook' },
+];
+
+const HIRE_LINKS = [
+  { label: 'Fiverr', url: 'https://www.fiverr.com/s/LdXADda' },
+  { label: 'Freelancer', url: 'https://www.freelancer.com/u/muhammadasim555' },
+  { label: 'Upwork', url: 'https://www.upwork.com/freelancers/~0178036dae7034b138?mp_source=share' },
+];
 
 const Contact = () => {
-    const redirection=()=>{
-        window.location.href = "https://www.linkedin.com/in/muhammad-asim-764a8a273/";
-    }
-    const redirectionInstagram=()=>{
-        window.location.href="https://www.instagram.com/muhammadasim4927/";
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-    }
-    const redirectionFacebook=()=>{
-        window.location.href="https://www.facebook.com/profile.php?id=100007728857565";
+    const formData = {
+      name: e.target.name.value,
+      email: e.target.email.value,
+      message: e.target.message.value,
+    };
 
-    }
+    try {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}send-email`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
 
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-      
-        const formData = {
-          name: e.target.name.value,
-          email: e.target.email.value,
-          message: e.target.message.value,
-        };
-      
-        try {
-          const response = await fetch(`${import.meta.env.VITE_API_URL}send-email`, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(formData),
-          });
-      
-          if (response.ok) {
-            Swal.fire({
-              title: 'Great',
-              text: 'Message Sent Successfully',
-              icon: 'success',
-              confirmButtonText: 'Ok',
-              confirmButtonColor: '#3C9189'
-
-
-            }).then((result) => {
-              if (result.isConfirmed) {
-                // Reset your form fields here
-                document.getElementById('contactForm').reset(); // Replace 'myForm' with your form's ID
-              }
-            });  
-          } else {
-
-              Swal.fire({
-                title: 'Error',
-                text: 'Failed to send nessage',
-                icon: 'error',
-                confirmButtonText: 'Ok',
-                confirmButtonColor: '#3C9189'
-              }).then((result) => {
-                if (result.isConfirmed) {
-                  // Reset your form fields here
-                  document.getElementById('contactForm').reset(); // Replace 'myForm' with your form's ID
+      if (response.ok) {
+        Swal.fire({
+          title: 'Great',
+          text: 'Message Sent Successfully',
+          icon: 'success',
+          confirmButtonText: 'Ok',
+          confirmButtonColor: '#f97316',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            document.getElementById('contactForm').reset();
           }
-              });           }
-        } catch (error) {
-          console.error(error);
-          alert("Error sending message.");
-        }
-      };
+        });
+      } else {
+        Swal.fire({
+          title: 'Error',
+          text: 'Failed to send message',
+          icon: 'error',
+          confirmButtonText: 'Ok',
+          confirmButtonColor: '#f97316',
+        });
+      }
+    } catch (error) {
+      console.error(error);
+      Swal.fire({
+        title: 'Error',
+        text: 'Something went wrong. Please try again later.',
+        icon: 'error',
+        confirmButtonText: 'Ok',
+        confirmButtonColor: '#f97316',
+      });
+    }
+  };
 
-    
-      const kale = {
-        hide: {
-          opacity: 0,
-          y:100
-    
-        },
-        view:{
-          opacity: 1,
-          y:0,
-          transition: {
-            delay: 0,
-              duration: 2
-             
-                  // Use a number, not a string
-          }
-        },
-      
-      
-      };
+  return (
+    <Section
+      id="contact"
+      tone="light"
+      eyebrow="Get In Touch"
+      title="Contact"
+      subtitle="Have a project in mind or an opportunity to discuss? I'd love to hear from you."
+    >
+      <div className="flex flex-col gap-6 md:flex-row">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={viewportOnce}
+          className="relative flex w-full flex-col gap-5 overflow-hidden rounded-2xl bg-ink p-8 text-paper shadow-xl shadow-black/10 md:w-1/2"
+        >
+          <div className="pointer-events-none absolute -top-16 -right-16 h-48 w-48 rounded-full bg-accent/20 blur-[80px]" />
 
+          <h3 className="text-2xl font-bold text-paper">Find Me</h3>
+          <a
+            href="mailto:muhammadasim4927@gmail.com"
+            className="flex items-center gap-3 text-sm text-gray-300 transition-colors hover:text-accent sm:text-base"
+          >
+            <FontAwesomeIcon icon={faEnvelope} className="text-accent" /> muhammadasim4927@gmail.com
+          </a>
+          <a
+            href="tel:+923125818370"
+            className="flex items-center gap-3 text-sm text-gray-300 transition-colors hover:text-accent sm:text-base"
+          >
+            <FontAwesomeIcon icon={faPhone} className="text-accent" /> +92 312 5818370
+          </a>
 
-
-
-
-    return (
-        <motion.div id="contact" variants={kale} initial="hide" whileInView="view" viewport={{ once: true }} className="w-full lg:pt-16 md:pt-16 sm:pt-12 pt-8 pb-0 px-2 md:px-10 lg:px-20">
-            {/* Head Section */}
-            <div className="head flex flex-col items-center lg:space-y-3 md:space-y-3 sm:space-y-3 space-y-2 text-center">
-                <h1 className='font-extrabold text-black headline sm:text-4xl md:text-5xl lg:text-6xl text-3xl'>Contact</h1>
-                <h6 className='text-orange-500 sm:text-sm md:text-md lg:text-lg font-semibold text-sm'>
-                    Do you have a project in your mind? Contact me here
-                </h6>
+          <div className="pt-4">
+            <h4 className="mb-3 font-mono text-xs font-semibold uppercase tracking-wide text-accent">Hire Me On</h4>
+            <div className="flex flex-wrap gap-3">
+              {HIRE_LINKS.map((hire) => (
+                <a
+                  key={hire.label}
+                  href={hire.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-lg border-2 border-white/20 px-4 py-2 text-sm font-semibold text-paper transition-colors hover:border-accent hover:bg-accent hover:text-ink"
+                >
+                  {hire.label}
+                </a>
+              ))}
             </div>
+          </div>
 
-            {/* Main Contact Section */}
-            <div className="flex flex-col md:flex-row gap-6 py-10 sm:px-10 md:px-0 ">
-                {/* Contact Info Box */}
-                <div className="bg-[#3C9189] lg:rounded-xl md:rounded-xl sm:rounded-xl text-white p-6 md:p-8 flex flex-col space-y-1 justify-center items-start w-full md:w-1/2">
-                    <h1 className='font-bold text-2xl mb-3'>Find Me <FontAwesomeIcon icon={faArrowTurnDown}  className='text-[24px] ml-1 font-extrabold'/></h1>
-                    <p className='text-lg pb-1'>📧 Email: muhammadasim4927@gmail.com</p>
-                    <p className='text-lg flex items-center pt-1'>
-                        <FontAwesomeIcon icon={faPhone} className='mr-3' /> 
-                        Tel: +92 312 5818370
-                    </p>
-                    <p className='text-lg flex items-center'>
-                        <FontAwesomeIcon icon={faPhone} className='mr-3' /> 
-                        Tel: +92 331 3399915
-                    </p>
-                    {/* Hire Me Section */}
-<div className="pt-6 w-full">
-  <h2 className="font-bold text-xl mb-3">Hire Me On</h2>
-  <div className="flex flex-wrap gap-4">
-    <a 
-      href="https://www.fiverr.com/s/LdXADda" 
-      target="_blank" 
-      rel="noopener noreferrer"
-      className="bg-white text-[#3C9189] border-2 border-white px-5 py-3 rounded-lg font-semibold hover:bg-[#2b7068] hover:text-white transition-colors"
-    >
-      Fiverr
-    </a>
-    <a 
-      href="https://www.freelancer.com/u/muhammadasim555" 
-      target="_blank" 
-      rel="noopener noreferrer"
-      className="bg-white text-[#3C9189] border-2 border-white px-5 py-3 rounded-lg font-semibold hover:bg-[#2b7068] hover:text-white transition-colors"
-    >
-      Freelancer
-    </a>
-        <a 
-      href="https://www.upwork.com/freelancers/~0178036dae7034b138?mp_source=share" 
-      target="_blank" 
-      rel="noopener noreferrer"
-      className="bg-white text-[#3C9189] border-2 border-white px-5 py-3 rounded-lg font-semibold hover:bg-[#2b7068] hover:text-white transition-colors"
-    >
-      Upwork
-    </a>
-  </div>
-</div>
-
-                    <p className='text-xl font-bold pt-3'>Feel free to reach out us on.</p>
-                    <div className="iop flex space-x-5 pt-4">
-                    <p className='text-xl flex items-center '>
-                    <FontAwesomeIcon onClick={redirection} icon={faLinkedinIn} className=' transition-transform duration-300 hover:scale-110 cursor-pointer'  /> 
-                    </p>
-                    <p className='text-xl flex items-center'>
-                    <FontAwesomeIcon icon={faInstagram} onClick={redirectionInstagram} className=' transition-transform duration-300 hover:scale-110 cursor-pointer' /> 
-                    </p>
-                    <p className='text-xl flex items-center'>
-                    <FontAwesomeIcon icon={faFacebookF} onClick={redirectionFacebook} className=' transition-transform duration-300 hover:scale-110 cursor-pointer' /> 
-                    </p>
-
-                    </div>
-                  
-                </div>
-
-                {/* Contact Form */}
-
-                <div className="flex flex-col space-y-10 w-full md:w-1/2">
-                <form id="contactForm" onSubmit={handleSubmit} className='space-y-3'>
-
-
-                    {/* Full-width Name and Email input fields */}
-                    <div className="flex flex-col sm:flex-row gap-4">
-                        <input
-                            className="p-4 border-2 mx-auto rounded-lg w-full outline-none"
-                            type="text" name="name"
-                            placeholder="Name"
-                        />
-                        <input
-                            className="p-4 border-2 rounded-lg w-full outline-none"
-                            type="email" name="email"
-                            placeholder="Email"
-                        />
-                    </div>
-
-                    {/* Message Input */}
-                    <textarea
-                        className="p-4 border-2 rounded-lg h-40 sm:h-52 w-full outline-none"
-                        placeholder="Message" name="message"
-                    />
-
-                    {/* Send Button */}
-                    <button type="submit" className="bg-[#3C9189] text-white py-4 px-10 rounded-lg flex justify-center items-center hover:bg-[#2b7068] transition-colors mx-auto text-lg">
-                        Send <FontAwesomeIcon icon={faPlane} className='ml-3' />
-                    </button>
-                    </form>
-
-                </div>
-
-            </div>
+          <div className="relative mt-auto flex items-center gap-4 pt-6">
+            {SOCIALS.map((social) => (
+              <a
+                key={social.label}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.label}
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-lg text-paper transition-colors hover:bg-accent hover:text-ink"
+              >
+                <FontAwesomeIcon icon={social.icon} />
+              </a>
+            ))}
+          </div>
         </motion.div>
-    );
+
+        <motion.form
+          id="contactForm"
+          onSubmit={handleSubmit}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={viewportOnce}
+          className="flex w-full flex-col gap-4 md:w-1/2"
+        >
+          <div className="flex flex-col gap-4 sm:flex-row">
+            <input
+              className="w-full rounded-lg border-2 border-black/10 p-4 outline-none transition-colors focus:border-accent"
+              type="text"
+              name="name"
+              placeholder="Name"
+              required
+            />
+            <input
+              className="w-full rounded-lg border-2 border-black/10 p-4 outline-none transition-colors focus:border-accent"
+              type="email"
+              name="email"
+              placeholder="Email"
+              required
+            />
+          </div>
+
+          <textarea
+            className="h-40 w-full rounded-lg border-2 border-black/10 p-4 outline-none transition-colors focus:border-accent sm:h-52"
+            placeholder="Message"
+            name="message"
+            required
+          />
+
+          <button
+            type="submit"
+            className="mx-auto flex items-center justify-center gap-3 rounded-lg bg-accent px-10 py-4 text-lg font-semibold text-ink transition-colors hover:bg-accent/90"
+          >
+            Send <FontAwesomeIcon icon={faPaperPlane} />
+          </button>
+        </motion.form>
+      </div>
+    </Section>
+  );
 };
 
 export default Contact;
