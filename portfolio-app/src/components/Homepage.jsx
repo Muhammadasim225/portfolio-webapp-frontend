@@ -7,12 +7,6 @@ import heroImage from '../assets/images/ppf.png'
 import cv from '../assets/public/Muhammad_Asim_CV.pdf'
 import { fadeUp, staggerContainer } from '../lib/motion'
 
-const STATS = [
-  { value: '2+', label: 'Years Building Software' },
-  { value: '10+', label: 'Projects Shipped' },
-  { value: '4', label: 'Teams Collaborated With' },
-]
-
 const Homepage = () => {
   return (
     <section
@@ -31,12 +25,13 @@ const Homepage = () => {
           animate="show"
           className="flex w-full flex-col items-start gap-5 text-left lg:w-3/5"
         >
-          <motion.span
-            variants={fadeUp}
-            className="eyebrow rounded-full border border-ink-border bg-white/5 px-4 py-1.5 text-xs font-medium uppercase text-accent"
-          >
-            Available for new opportunities
-          </motion.span>
+          <motion.div variants={fadeUp} className="flex items-center gap-2 text-gray-400">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+            </span>
+            <span className="eyebrow text-xs uppercase">Available for new opportunities</span>
+          </motion.div>
 
           <motion.h1 variants={fadeUp} className="headline text-4xl text-paper sm:text-5xl md:text-6xl">
             Hi, I&apos;m Muhammad Asim.
@@ -46,38 +41,25 @@ const Homepage = () => {
             Full Stack Engineer — Backend &amp; AI Automation
           </motion.h2>
 
-          <motion.p variants={fadeUp} className="max-w-xl text-sm leading-relaxed text-gray-400 sm:text-base">
-            I design and ship scalable REST APIs with Python/FastAPI and the MERN stack, and build
-            AI-powered automation with LangChain, LangGraph, and n8n — turning complex ideas into
-            fast, production-ready systems.
+          <motion.p variants={fadeUp} className="max-w-md text-sm leading-relaxed text-gray-400 sm:text-base">
+            I design scalable APIs and AI-powered automation — turning complex ideas into fast,
+            production-ready systems.
           </motion.p>
 
-          <motion.div variants={fadeUp} className="flex w-full flex-col gap-3 pt-2 sm:w-auto sm:flex-row">
-            <a href={cv} download="Muhammad_Asim_CV.pdf" className="w-full sm:w-auto">
-              <button className="flex w-full items-center justify-center gap-2 rounded-lg border border-accent px-6 py-3 text-sm font-semibold text-accent transition-colors hover:bg-accent hover:text-ink sm:w-auto">
-                <FontAwesomeIcon icon={faDownload} className="text-xs" />
-                Download CV
-              </button>
-            </a>
+          <motion.div variants={fadeUp} className="flex w-full flex-col gap-3 pt-2 sm:w-auto sm:flex-row sm:items-center">
             <Link to="contact" smooth duration={600} offset={-64} className="w-full sm:w-auto">
               <button className="w-full rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-ink transition-transform hover:scale-[1.03] sm:w-auto">
                 Let&apos;s Talk
               </button>
             </Link>
-          </motion.div>
-
-          <motion.div
-            variants={fadeUp}
-            className="grid w-full grid-cols-3 gap-4 border-t border-ink-border pt-6 sm:max-w-md"
-          >
-            {STATS.map((stat) => (
-              <div key={stat.label}>
-                <p className="headline text-2xl text-paper sm:text-3xl">{stat.value}</p>
-                <p className="mt-1 text-[11px] uppercase tracking-wide text-gray-500 sm:text-xs">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
+            <a
+              href={cv}
+              download="Muhammad_Asim_CV.pdf"
+              className="flex items-center justify-center gap-2 py-3 text-sm font-semibold text-gray-300 transition-colors hover:text-accent"
+            >
+              <FontAwesomeIcon icon={faDownload} className="text-xs" />
+              Download CV
+            </a>
           </motion.div>
         </motion.div>
 
@@ -89,11 +71,11 @@ const Homepage = () => {
           className="relative w-2/3 sm:w-1/2 lg:w-2/5"
         >
           <div className="absolute inset-0 -z-10 scale-95 rounded-[2rem] bg-gradient-to-br from-accent/40 via-accent2/30 to-transparent blur-2xl" />
-          <div className="overflow-hidden rounded-[2rem] border border-ink-border bg-white/5">
+          <div className="overflow-hidden rounded-[2rem] border border-ink-border bg-ink">
             <img
               src={heroImage}
               alt="Muhammad Asim"
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover [filter:contrast(1.12)_saturate(1.25)_brightness(1.04)]"
               loading="eager"
               decoding="async"
             />
