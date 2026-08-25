@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-scroll'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowDown, faDownload } from '@fortawesome/free-solid-svg-icons'
-import heroImage from '../assets/images/ppf.png'
+import heroImage from '../assets/public/ppf.png'
 import cv from '../assets/public/Muhammad_Asim_CV.pdf'
 import { fadeUp, staggerContainer } from '../lib/motion'
 
@@ -70,16 +70,14 @@ const Homepage = () => {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="relative w-2/3 sm:w-1/2 lg:w-2/5"
         >
-          <div className="absolute inset-0 -z-10 scale-95 rounded-[2rem] bg-gradient-to-br from-accent/40 via-accent2/30 to-transparent blur-2xl" />
-          <div className="overflow-hidden rounded-[2rem] border border-ink-border bg-ink">
-            <img
-              src={heroImage}
-              alt="Muhammad Asim"
-              className="h-full w-full object-cover [filter:contrast(1.12)_saturate(1.25)_brightness(1.04)]"
-              loading="eager"
-              decoding="async"
-            />
-          </div>
+          <img
+            src={heroImage}
+            alt="Muhammad Asim"
+            className="block w-full"
+            style={{ clipPath: 'circle(45.5% at 49% 51%)' }}
+            loading="eager"
+            decoding="async"
+          />
         </motion.div>
       </div>
 
